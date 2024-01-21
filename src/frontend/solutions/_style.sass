@@ -1,0 +1,52 @@
+.solutions
+    margin: 4rem 0
+    .solutions__card
+        &:hover
+            .image-overlay
+                .overlay
+                    top: 0
+       
+            
+        .image-overlay
+            position: relative
+            overflow: hidden
+            .solutions__image
+                width: 100%
+                height: 230px
+                object-fit: cover
+            .overlay
+                background-color: rgba(231, 16, 16, 0.7)
+                width: 100%
+                height: 100%
+                position: absolute
+                left: 0
+                top: calc(100% - 5px)
+                transition: all 0.5s
+                display: flex
+                justify-content: center
+                align-items: center
+                a
+                    padding: .4rem .8rem
+                    border-radius: 2px
+                    background-color: #fff
+                    font-size: 24px
+                    i
+                        color:#dd3333
+        .solutions__content
+            padding: 1rem 0
+            .solutions__title
+                text-transform: capitalize
+                font-size: 24px
+            .solutions__samary
+                font-size: 14px
+                color: #666
+                line-height: 22px   
+            a
+                color: #000
+                transition: 0.3s ease
+                &:hover
+                    color: #dd3333
+                .read-btn
+                    font-weight: 600
+                    border-top: 1px solid #efefef
+                    padding-top: 1rem                  

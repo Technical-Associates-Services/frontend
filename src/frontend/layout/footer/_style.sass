@@ -1,0 +1,129 @@
+footer
+  background-color: #111724
+  position: relative
+  z-index: 1
+  margin-top: 4rem
+  &::before
+    content: ""
+    position: absolute
+    width: 50%
+    top:-54px
+    left: 0
+    height:300px
+    clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)
+    background-color: #111724
+    z-index: -1
+
+  &::after
+    content: ""
+    position: absolute
+    width: 50%
+    top:-54px
+    right: 0
+    height:300px
+    clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)
+    background-color: #111724
+    z-index: -1 
+    
+
+  .footer__content
+    color: #eee
+    padding: 5rem 0
+    & h4
+      font-size: 20px
+      position: relative 
+      margin-bottom: 2rem
+      display: inline-block
+      &::after
+        content: ""
+        position: absolute 
+        bottom: -15px 
+        left: 0 
+        width: 120px 
+        height: 1px
+        background-color: #b9b7b7
+      &::before
+        content: ""
+        position: absolute
+        bottom: -16px
+        width: 40px 
+        height: 3px
+        left: 40px
+        background-color: #d24e1a
+        z-index: 1
+    & ul
+      padding-left: 0
+    & a
+      color: #eee
+      font-size: 14px
+      text-transform: capitalize
+    & p
+      margin-bottom: 0
+      font-size: 14px  
+    & li
+      padding-bottom: 1rem
+    & .item
+      transition: 0.3 ease
+      &:hover
+        & a
+          color:#dd3333 !important   
+
+      
+    .footer__logo-section
+      .footer__logo
+        padding-bottom: 1rem
+        max-width: 75px
+        height: auto
+      form
+        display: flex
+        margin-top: 4rem
+        input
+          width: 80%
+          padding: .6rem .5rem 
+          background-color: #191a1f
+          color: #eee
+          font-size: 14px 
+          border: 1px solid #b9b7b7
+        .send-btn
+          padding: 0.7rem 1rem 
+          background-color: #dd3333
+          border-top: 1px solid #b9b7b7
+          border-right: 1px solid #b9b7b7
+          border-bottom: 1px solid #b9b7b7
+
+
+    .footer__contact
+      .contact-info
+        .info
+          display: flex
+          gap: 1rem
+          i
+            font-size: 18px
+            color: #dd3333
+           
+           
+
+    
+           
+
+        
+
+
+       
+     
+         
+    
+  .footer__bottom
+    background-color: #181e2b
+    color: #eee
+    .bottom-list
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 1rem 0
+      font-size: 13px
+      & a
+        color: #eee
+        padding-left: 5px
+
+      

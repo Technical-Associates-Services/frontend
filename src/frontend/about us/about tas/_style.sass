@@ -1,0 +1,195 @@
+.tas
+    .tas__image
+        max-width: 100%
+        height: auto
+    .tas__content
+        .tas__description
+            color: #666
+            font-size: 14px
+            line-height: 24px
+
+
+.items
+    margin: 4rem 0
+    .items__item
+        border: 1px solid #e7e7e7
+        padding: 1.5rem
+        position: relative
+        &:hover
+            &::before
+                transition-delay: 0s
+                width: 100%
+            &::after
+                transition-delay: 0s
+                width: 100%
+            .items__content
+                &::before
+                    transition-delay: 0.2s
+                    height: 100%
+                &::after
+                    transition-delay: 0.2s
+                    height: 100%    
+                          
+        &::before
+            right: 0
+            top: 0
+            content: ""
+            width: 0
+            height: 2px
+            position: absolute
+            transition: all 0.2s linear
+            background: #dd3333
+            transition-delay: 0.2s
+        &::after
+            left: 0
+            bottom: 0
+            content: ""
+            width: 0
+            height: 2px
+            position: absolute
+            transition: all 0.2s linear
+            background: #dd3333
+            transition-delay: 0.2s
+        .items__content
+            &::before
+                left: 0
+                top: 0
+                content: ""
+                width: 2px
+                height: 0
+                position: absolute
+                transition: all 0.2s linear
+                background: #dd3333
+                transition-delay: 0s
+            &::after
+                right: 0
+                bottom: 0
+                transition-delay: 0s
+                content: ""
+                width: 2px
+                height: 0
+                position: absolute
+                transition: all 0.2s linear
+                background: #dd3333
+            .items__description
+                color:#666
+                font-size: 14px
+                line-height: 24px
+
+
+                   
+
+                    
+        
+                
+
+            
+        .items__content
+           
+            h4
+                text-transform: capitalize
+                position: relative
+                z-index: 1
+                line-height: 100px
+                font-weight: 700
+                span
+                    position: absolute
+                    left: 0
+                    top: 0
+                    font-size: 90px
+                    z-index: -1
+                    color: #eef1f6
+                    opacity: 0.5
+                    font-weight: 900
+            .items__description
+                color:#666
+                    font-size: 14px              
+
+   
+
+.testimonials
+    background-color: #f8f8f8
+    padding: 4rem 0
+    margin: 6rem 0
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    width: 100%
+    height: 100%
+    .testimonials__card
+        position: relative
+        &:hover
+            &::after
+                height: 70px
+                width: 70px
+                visibility: visible
+            .testimonials__client
+                &::before
+                    height: 100%
+                    visibility: visible
+                    bottom: 0px
+                    top: auto
+                .testimonials__client--text
+                    color: #ffffff       
+        &::after
+            height: 0px
+            width: 0px
+            background: #dd3333
+            position: absolute
+            content: ""
+            top: 0px
+            right: 0px
+            border-bottom-left-radius: 100px
+            visibility: hidden
+            transition: all 0.3s ease-out 0s
+        .testimonials__content
+            padding:  3rem 2rem 
+            background-color: #ffffff
+            margin-bottom: 1rem
+            box-shadow: 0px 5px 20px 0px rgba(0, 6, 91, 0.05)
+            border: 1px solid #dce1e4
+            .testimonials__text
+                font-size: 14px
+                color: #666
+                font-style: italic
+                line-height: 26px
+                font-weight: 500
+        .testimonials__client
+            padding: 1rem 2rem
+            background-color: #ffffff
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 1rem
+            box-shadow: 0px 5px 20px 0px rgba(0, 6, 91, 0.05)
+            z-index: 1
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                left: 0px
+                bottom: auto
+                top: 0px
+                height: 0%
+                width: 100%
+                background: #dd3333
+                visibility: hidden
+                transition: all 0.3s ease-out 0s
+                z-index: -1
+            .testimonials__client--image
+                width: 60px
+                height: 60px
+                border-radius: 50%
+                object-fit: cover
+            .testimonials__client--text
+                text-transform: capitalize
+                span
+                    font-size: 13px
+                .testimonials__client--name
+                    font-size: 19px    
+                
+
+
+.swiper-wrapper
+    padding-bottom: 3rem

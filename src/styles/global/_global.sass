@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap')
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+  text-decoration: none !important
+  outline: none
+  border: none
+  font-family: 'Manrope', sans-serif
+.header__menu
+      display: block
+      @media ( max-width:1130px )
+        display: none
+      & ul
+        margin-bottom: 0
+        padding-left: 0
+      .menu__list
+        display: flex
+        justify-content: center
+        align-items: center   
+        gap: 2rem
+      
+        .menu__item
+          text-transform: uppercase
+          font-size: 14px
+          transition: 0.3s ease
+          text-transform: uppercase
+          font-weight: 500
+          letter-spacing: 0.5px
+          display: flex
+          justify-content: center
+          align-items: center
+          padding: 1rem 0
+
+          &:hover
+            a
+              color: #dd3333
+            i
+              color:#dd3333   
+            .sub-menu
+              display: block
+           
+          i
+            color: #eee
+            font-size: 24px
+
+        
+          a
+            color:#eee
+          .sub-menu
+            position: absolute
+            margin: 0
+            width: 260px
+            background-color: #111
+            top: 100%
+            // left: -30px
+            padding: 20px 0
+            z-index: 55
+            transition: all .3s ease
+            display: none
+            &::after
+              content: ""
+              position: absolute
+              top: 100%
+              left: 0
+              border-right: 260px solid transparent
+              border-top: 20px solid #111
+            a
+              color: #eee  
+              
+            .sub-menu__item
+              font-size: 14px
+              text-transform: capitalize
+              padding: 0 30px
+              margin: 5px 0 10px   
+   
+.wrapper
+  max-width: 1320px
+  padding: 0 30px
+  margin:  0 auto
+.title
+  font-size: 35px 
+  font-weight: 400 
+  line-height: 1 
+  letter-spacing: 0 
+  color: #14141c 
+  position: relative 
+  margin-bottom: 2rem
+  text-transform: capitalize
+  &::after
+    content: ""
+    position: absolute 
+    bottom: -15px 
+    left: 0 
+    width: 150px 
+    height: 1px
+    background-color: #b9b7b7
+  &::before
+    content: ""
+    position: absolute
+    bottom: -16px
+    width: 50px 
+    height: 4px
+    left: 50px
+    background-color: #d24e1a
+    z-index: 1    
+.mobile__nav
+  @media screen and ( max-width: 1130px )
+    display: block !important
+
+
+
+.btn-close
+    --bs-btn-close-color: #fff
+    --bs-btn-close-opacity: 0.5
+    --bs-btn-close-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e)
+
+
+
+  

@@ -1,0 +1,54 @@
+.associations
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    .associations__description
+        text-align: center
+        color: #666
+        font-size: 14
+.distributors-section
+    margin: 4rem 0
+    padding: 3rem 0
+    background-color: #f8f8f8
+    .distributors
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        background-color: #f8f8f8
+        grid-column-gap: 1px
+        grid-row-gap: 1px
+        @media screen and ( max-width: 950px )
+            grid-template-columns: repeat(3, 1fr)
+
+            
+        
+        .distributors__card
+            background-color: #ffffff
+
+            .distributors__image
+                max-width: 100%
+                height: auto
+                aspect-ratio: 3/2
+                object-fit: contain
+
+.other-associations-section
+    padding-bottom: 4rem
+    .associations
+        display: grid
+        background-color: #f8f8f8
+        grid-column-gap: 1px
+        grid-row-gap: 1px
+        border: 1px solid #f8f8f8
+        grid-template-columns: repeat(5, 1fr)
+        @media screen and ( max-width: 950px )
+            grid-template-columns: repeat(3, 1fr)
+        .associations__card
+            background-color: #ffffff
+            padding: 1rem
+            .associations__image
+                max-width: 100%
+                height: 200px
+                oaspect-ratio: 3/2
+                object-fit: contain
+                
+

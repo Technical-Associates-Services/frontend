@@ -1,0 +1,150 @@
+header
+ 
+  border-bottom: none
+  width: 100%
+  z-index: 1000
+  position: sticky
+  top: 0
+  left: 0
+
+  
+
+  .toppanel
+    background-color: #16161b
+    padding: 5px 50px
+    display:  flex
+    justify-content: space-between
+    align-items: center
+    flex: wrap
+    @media screen and ( max-width:1130px  )
+      padding: 7px 50px
+    @media screen and ( max-width:490px  )
+      flex-direction: column  
+    .toppanel__left--panel
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      gap: 1rem
+      flex: wrap
+
+   
+      & a
+        color:#eee
+      .toppanel__info
+        font-size: 13px
+        position: relative
+        &::after
+          position: absolute
+          content: ""
+          background-color: hsla(0,0%,100%,.4)
+          right: -10px
+          width: 1px
+          height: 20px
+      .toppanel__social--list
+        .social-icons
+          display: flex
+          gap: 1rem
+          margin-bottom: 0
+          padding-left: 0
+          .icon
+            transition: 0.3s ease
+            font-size: 13px
+            &:hover
+              a
+                color: #045cb4 
+    .toppanel__right--panel
+      display: none
+      @media screen and ( max-width: 1130px  )
+        display: block
+        font-size: 15px
+        .number
+          color: #eee 
+          margin-bottom: 0
+          font-style: italic             
+          
+
+            
+  .header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    top: 30px
+    left: 0
+    background-color: rgba(0,0,0,.8)
+    z-index: 1000
+    width: 100%
+    position: absolute
+
+
+
+    .header__logo
+      max-width: 75px
+      height: 50px
+      margin-left: 30px
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+    .toll-free
+      background-color:#dd3333
+      padding: 0.6rem 1rem
+      color: #fff
+      font-size: 18px
+      letter-spacing: .5px
+      font-style: italic
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      display: block
+      @media ( max-width: 1130px )
+        display: none
+      &::before
+        position: absolute
+        content:""
+        left: -23px
+        top: -2px
+        border-top: 48px solid transparent
+        border-right: 23px solid #dd3333
+      & p
+        margin-bottom: 0
+    .side-menu
+      display: none
+      cursor: pointer
+      color: #eee
+      font-size: 24px
+      @media ( max-width: 1130px )
+        display: block
+        margin-right: 30px
+             
+button
+  &:hover
+    background-color: unset !important
+ 
+.btn-close
+  color: #ffffff !important  
+
+.offcanvas.offcanvas-start
+  background-color: #16161b
+.offcanvas-body
+  .header__menu
+    .menu__list
+      display: flex
+      flex-direction: column
+      gap: 0
+      .menu__item
+        position: relative
+        .sub-menu
+          position: absolute
+          min-height: 200px
+        
+
+
+
+      
+
+  
+
+            
+       
+        

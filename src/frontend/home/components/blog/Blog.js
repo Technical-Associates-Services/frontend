@@ -54,8 +54,8 @@ const Blog = () => {
               className="mySwiper"
             >
               {blogs.map((blog, index) => (
-                <SwiperSlide>
-                  <BlogCard data={blog} key={index} />
+                <SwiperSlide key={index}>
+                  <BlogCard data={blog} />
                 </SwiperSlide>
               ))}
             </Swiper>

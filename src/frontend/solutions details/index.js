@@ -35,11 +35,11 @@ const SolutionsDetails = () => {
                   <h3>Hospitality Solutions</h3>
                   <div className="download">
                     <Link to="">
-                      <i class="ri-file-word-line"></i>
+                      <i className="ri-file-word-line"></i>
                       Download Doc
                     </Link>
                     <Link to="">
-                      <i class="ri-file-pdf-2-line"></i>
+                      <i className="ri-file-pdf-2-line"></i>
                       Download PDF
                     </Link>
                   </div>
@@ -60,7 +60,7 @@ const SolutionsDetails = () => {
                     {solutionsData.map((data, index) => (
                       <Accordion.Item eventKey={index}>
                         <Accordion.Header>
-                          <i class="ri-add-line"></i>
+                          <i className="ri-add-line"></i>
                           <span>{data.itemName}</span>
                         </Accordion.Header>
                         <Accordion.Body>

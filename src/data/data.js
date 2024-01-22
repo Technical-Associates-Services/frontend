@@ -4,7 +4,7 @@ export const projects = [
     title: 'Industify Gas and Oil Organization',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
-    image: '/images/img-1.jpg',
+    image: '/images/product-1.png',
     slug: 'project-1',
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     title: 'Industify Gas and Oil Organization',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
-    image: '/images/img-2.jpg',
+    image: '/images/product-2.jpg',
     slug: 'project-2',
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     title: 'Industify Gas and Oil Organization',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
-    image: '/images/img-3.jpg',
+    image: '/images/product-3.jpg',
     slug: 'project-3',
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
     title: 'Industify Gas and Oil Organization',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
-    image: '/images/img-4.jpg',
+    image: '/images/product-4.png',
     slug: 'project-4',
   },
 ]
@@ -491,7 +491,6 @@ export const solutionsData = [
         id: 5,
         listName: 'Sewage and Waste Water Treatment.',
       },
-      
     ],
   },
 ]

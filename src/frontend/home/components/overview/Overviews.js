@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import CustomButton from '../../../../components/common/button/CustomButton'
-
+import { Link } from 'react-router-dom'
 const Overview = () => {
   return (
     <>
@@ -23,7 +23,9 @@ const Overview = () => {
                   in Nepal
                 </div>
               </div>
-              <CustomButton btnData="Explore More" />
+              <Link to="">
+                <CustomButton btnData="Explore More" />
+              </Link>
             </div>
           </Container>
         </div>

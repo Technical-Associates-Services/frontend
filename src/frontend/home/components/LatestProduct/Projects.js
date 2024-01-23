@@ -1,5 +1,5 @@
 import React from 'react'
-import { projects } from '../../../../data/data'
+import { products } from '../../../../data/data'
 import { Link } from 'react-router-dom'
 import CustomCard from '../../../../components/common/CustomCard/CustomCard'
 
@@ -44,9 +44,9 @@ const Projects = () => {
               </Col>
               <Col lg={8} className="px-0">
                 <div className="project__right--content">
-                  {projects?.length > 0 &&
-                    projects?.map((project, index) => (
-                      <CustomCard data={project} key={index} />
+                  {products?.length > 0 &&
+                    products?.map((product, index) => (
+                      <CustomCard data={product} key={index} />
                     ))}
                 </div>
               </Col>

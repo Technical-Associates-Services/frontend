@@ -10,7 +10,7 @@ const SolutionsDetails = () => {
     <>
       <CustomBreadcrumb title="Solution Single" subtitle="solution single" />
 
-      <Container>
+      <Container className='pb-5'>
         <div className="solutions-detail">
           <Row>
             <Col lg={4}>

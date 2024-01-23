@@ -1,7 +1,7 @@
-export const projects = [
+export const products = [
   {
     id: 2,
-    title: 'Industify Gas and Oil Organization',
+    title: 'Water & Space Heating Systems',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
     image: '/images/product-1.png',
@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Industify Gas and Oil Organization',
+    title: 'Water Treatment system ',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
     image: '/images/product-2.jpg',
@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'Industify Gas and Oil Organization',
+    title: 'Boilers',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
     image: '/images/product-3.jpg',
@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: 'Industify Gas and Oil Organization',
+    title: 'waste & effluent treatment',
     summary:
       'We go beyond testing, inspecting and certifying products; we are a Total Quality Assurance provider to industries worldwide.…',
     image: '/images/product-4.png',

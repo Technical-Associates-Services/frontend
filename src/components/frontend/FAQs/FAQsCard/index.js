@@ -5,10 +5,10 @@ import Accordion from 'react-bootstrap/Accordion'
 import CustomTitle from '../../../common/CustomTitle'
 import { faqsData } from '../../../../data/data'
 
-const FAQsCard = ({ order, title }) => {
+const FAQsCard = ({ order, title, style }) => {
   return (
     <>
-      <div className="custom-wrapper">
+      <div className="custom-wrapper" style={style}>
         <Row className="mx-0">
           {order ? (
             <Col lg={6} style={{ order: '2' }}>

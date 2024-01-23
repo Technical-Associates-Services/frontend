@@ -11,7 +11,7 @@ const BlogAndNews = () => {
       <CustomBreadcrumb title="blogs" subtitle="blogs" />
 
       <Container>
-        <div className="blogs">
+        <div className="blogs" style={{ paddingBottom: '6rem' }}>
           <Row>
             {blogs.map((blog, index) => (
               <Col lg={4}>

@@ -1,0 +1,83 @@
+.enquiry
+    position: fixed
+    top: 50%
+    left: -52px
+    z-index: 999
+    cursor: pointer
+    .enquiry__button
+        background-color: #dd3333
+        color: #fff
+        font-size: 14px
+        border-radius: 4px 4px 0 0
+        padding:  0.4rem 1.5rem
+        transform: rotate(90deg)
+        i
+            padding-left: .5rem
+.enquiry__card
+    background-color: rgb(255, 255, 255)
+    max-height: 380px
+    width: 400px
+    transition: 0.5s ease 
+    border-radius: 10px
+    position: absolute
+    top: -70px
+    left: 87px
+    z-index: -1
+    padding: 10px
+    box-shadow: 0 0 6px rgba(0,0,0,.16)
+    transform-origin: 0 100% 0 
+    transform: rotateY(90deg)
+    @media ( max-width: 767px)
+        width: 250px
+    &.active
+        transform: rotateY(0)!important
+
+    
+
+    .custom-wrapper
+        margin: 1rem  
+        position: relative
+        i
+            position: absolute
+            top: -20px
+            right: -10px
+            font-weight: 600
+            color: #555
+            font-size: 24px
+            cursor: pointer
+        h4
+            color: #dd3333
+            font-size: 16px
+            padding-bottom: 8px
+        .enquiry__form
+            
+            .form-group
+                padding-bottom: 10px
+                width: 100%
+                input
+                    width: 100%
+                    border-radius: 20px
+                    border: 1px solid #bebebe
+                    font-size: 12px
+                    padding:  0.5rem
+                textarea
+                    border-radius: 20px
+                    border: 1px solid #bebebe
+                    font-size: 12px
+                    padding:  0.5rem
+                    width: 100%
+            button
+                padding: .4rem .8rem 
+                background-color:#dd3333 !important 
+                font-size: 14px
+                color: #fff
+                text-transform: capitalize
+                transition: 0.3s ease
+                border-radius: 20px
+                width: 100%
+                font-weight: 500
+
+                &:hover
+                    background-color: #16161b !important
+
+

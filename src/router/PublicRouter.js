@@ -11,6 +11,7 @@ import FAQs from '../frontend/FAQs'
 import Services from '../frontend/our services'
 import Solutions from '../frontend/solutions'
 import SolutionsDetails from '../frontend/solutions details'
+import ProductDetails from '../frontend/product details'
 
 const PublicRouter = () => {
   return (
@@ -27,6 +28,7 @@ const PublicRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/solutions-details" element={<SolutionsDetails />} />
         <Route path="/solution" element={<Solutions />} />
+        <Route path="/product" element={<ProductDetails />} />
       </Routes>
     </>
   )

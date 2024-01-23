@@ -29,7 +29,11 @@ const FAQs = () => {
         </Container>
       </div>
       <Container fluid className="px-0">
-        <FAQsCard order={2} title="Commercial" />
+        <FAQsCard
+          order={2}
+          title="Commercial"
+          style={{ paddingBottom: '5rem' }}
+        />
       </Container>
     </>
   )

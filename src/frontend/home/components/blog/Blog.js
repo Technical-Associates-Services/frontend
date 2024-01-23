@@ -22,7 +22,7 @@ const Blog = () => {
         className="blog__bg--image"
         style={{ backgroundImage: 'url("/images/map.png")' }}
       >
-        <Container>
+        <Container className="py-5">
           <CustomTitle
             title="Thoughts & Experiments"
             customStyle={{ width: '300px' }}

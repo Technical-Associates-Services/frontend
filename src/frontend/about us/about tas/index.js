@@ -13,6 +13,7 @@ import 'swiper/css/navigation'
 // import required modules
 import { Navigation, Pagination } from 'swiper/modules'
 import CustomBreadcrumb from '../../../components/common/CustomBreadcrumb'
+import { TestimonialsCard } from '../../home/components'
 
 const AboutTas = () => {
   return (
@@ -112,56 +113,9 @@ const AboutTas = () => {
           backgroundImage: "url('/images/testimonial-bg3.jpg')",
         }}
       >
-        <Container>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-              },
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Navigation, Pagination]}
-            className="mySwiper"
-          >
-            {testimonialsCards.map((testimonialsCard, index) => (
-              <SwiperSlide>
-                <div className="testimonials__card" key={index}>
-                  <div className="testimonials__content">
-                    <p className="testimonials__text">
-                      {testimonialsCard.text}
-                    </p>
-                  </div>
-                  <div className="testimonials__client">
-                    <img
-                      src={testimonialsCard.image}
-                      className="testimonials__client--image"
-                      alt="client"
-                    />
-                    <div className="testimonials__client--text">
-                      <span>{testimonialsCard.post}</span>
-                      <h4 className="testimonials__client--name">
-                        {testimonialsCard.name}
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </Container>
+        {/* <Container> */}
+        <TestimonialsCard />
+        {/* </Container> */}
       </div>
     </>
   )

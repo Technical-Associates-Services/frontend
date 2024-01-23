@@ -28,8 +28,8 @@ const OurAssociation = () => {
         <Container>
           <CustomTitle title="distributors" />
           <div className="distributors">
-            {distributors.map((distributor, inadex) => (
-              <div className="distributors__card">
+            {distributors.map((distributor, index) => (
+              <div className="distributors__card" key={index}>
                 <Link to="">
                   <img
                     className="distributors__image"

@@ -1,11 +1,11 @@
 import React from 'react'
 import {
   LatestProjects,
-  Testimonial,
   Blog,
   Banner,
   About,
   Overview,
+  TestimonialsCard,
 } from './components'
 
 const Home = () => {
@@ -14,10 +14,9 @@ const Home = () => {
       <Banner />
       <About />
 
-      <Testimonial />
-
       <LatestProjects />
       <Overview />
+      <TestimonialsCard />
 
       <Blog />
     </>

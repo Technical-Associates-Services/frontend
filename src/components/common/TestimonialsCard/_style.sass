@@ -1,0 +1,79 @@
+.testimonials
+    .testimonials__card
+        position: relative
+        margin: 1rem 0
+        &:hover
+            &::after
+                height: 70px
+                width: 70px
+                visibility: visible
+            .testimonials__client
+                &::before
+                    height: 100%
+                    visibility: visible
+                    bottom: 0px
+                    top: auto
+                .testimonials__client--text
+                    color: #ffffff       
+        &::after
+            height: 0px
+            width: 0px
+            background: #dd3333
+            position: absolute
+            content: ""
+            top: 0px
+            right: 0px
+            border-bottom-left-radius: 100px
+            visibility: hidden
+            transition: all 0.3s ease-out 0s
+        .testimonials__content
+            padding:  3rem 2rem 
+            background-color: #ffffff
+            margin-bottom: 1rem
+            box-shadow: 0px 5px 20px 0px rgba(0, 6, 91, 0.05)
+
+            // border: 1px solid #dce1e4
+            .testimonials__text
+                font-size: 14px
+                color: #666
+                font-style: italic
+                line-height: 26px
+                font-weight: 500
+        .testimonials__client
+            padding: 1rem 2rem
+            background-color: #ffffff
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 1rem
+            box-shadow: 0px 5px 20px 0px rgba(0, 6, 91, 0.05)
+            z-index: 1
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                left: 0px
+                bottom: auto
+                top: 0px
+                height: 0%
+                width: 100%
+                background: #dd3333
+                visibility: hidden
+                transition: all 0.3s ease-out 0s
+                z-index: -1
+            .testimonials__client--image
+                width: 60px
+                height: 60px
+                border-radius: 50%
+                object-fit: cover
+            .testimonials__client--text
+                text-transform: capitalize
+                span
+                    font-size: 13px
+                .testimonials__client--name
+                    font-size: 19px    
+                
+
+
+.swiper-wrapper
+    padding-bottom: 3rem

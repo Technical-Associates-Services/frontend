@@ -8,7 +8,7 @@ const BlogDetails = () => {
     <>
       <CustomBreadcrumb title="Blog Single Page 1" subtitle="Blog" />
 
-      <Container>
+      <Container className="pb-5">
         <Row>
           <Col lg={8}>
             <div className="leftside">

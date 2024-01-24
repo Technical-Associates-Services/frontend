@@ -494,3 +494,15 @@ export const solutionsData = [
     ],
   },
 ]
+export const waterAndSpaceHeatingaData = {
+  description:
+    '<p>Water heating is a heat transfer process that uses an energy source to heat water above its initial temperature. Typical domestic uses of hot water include cooking, cleaning, bathing, and space heating. In industry, hot water and water heated to steam have many uses.</p><p>Electric space and water heating systems are second only to natural gas as the preferred primary heating choice for domestic, commercial and industrial premises in Nepal.</p>',
+
+  image: '/images/product-1.png',
+}
+
+export const waterPumpsData = {
+  description:
+    '<h3>Something</h3><p>Water heating is a heat transfer process that uses an energy source to heat water above its initial temperature. Typical domestic uses of hot water include cooking, cleaning, bathing, and space heating. In industry, hot water and water heated to steam have many uses.</p><p>Electric space and water heating systems are second only to natural gas as the preferred primary heating choice for domestic, commercial and industrial premises in Nepal.</p>',
+  image: '/images/about-img.png',
+}

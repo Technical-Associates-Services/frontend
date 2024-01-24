@@ -45,7 +45,7 @@ const Header = () => {
                       <Link to="">Thermax Boilers</Link>
                     </li>
                     <li className="sub-menu__item">
-                      <Link to="">Water Pumps</Link>
+                      <Link to="/water-pumps">Water Pumps</Link>
                     </li>
                     <li className="sub-menu__item">
                       <Link to="">Compressed Air System</Link>

@@ -11,7 +11,9 @@ import FAQs from '../frontend/FAQs'
 import Services from '../frontend/our services'
 import Solutions from '../frontend/solutions'
 import SolutionsDetails from '../frontend/solutions details'
-import ProductDetails from '../frontend/product details'
+import WaterAndSpaceHeating from '../frontend/product details/water & space heating system'
+import WaterTreatmentSystem from '../frontend/product details/water treatment system'
+import WaterPumps from '../frontend/product details/water pumps'
 
 const PublicRouter = () => {
   return (
@@ -28,7 +30,15 @@ const PublicRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/solutions-details" element={<SolutionsDetails />} />
         <Route path="/solution" element={<Solutions />} />
-        <Route path="/product" element={<ProductDetails />} />
+        <Route
+          path="/product/water-space-heating-systems"
+          element={<WaterAndSpaceHeating />}
+        />
+        <Route
+          path="/water-treatment-system"
+          element={<WaterTreatmentSystem />}
+        />
+        <Route path="/water-pumps" element={<WaterPumps />} />
       </Routes>
     </>
   )

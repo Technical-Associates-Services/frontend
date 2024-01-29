@@ -10,7 +10,6 @@ const Header = () => {
     <>
       <header>
         <TopPanel />
-        {/* <div className="wrapper"> */}
         <div className="header">
           <div className="header__logo">
             <Link to="/">
@@ -45,7 +44,7 @@ const Header = () => {
                       <Link to="">Thermax Boilers</Link>
                     </li>
                     <li className="sub-menu__item">
-                      <Link to="/water-pumps">Water Pumps</Link>
+                      <Link to="product/water-pumps">Water Pumps</Link>
                     </li>
                     <li className="sub-menu__item">
                       <Link to="">Compressed Air System</Link>
@@ -72,7 +71,6 @@ const Header = () => {
 
           <MobileMenu />
         </div>
-        {/* </div> */}
       </header>
     </>
   )

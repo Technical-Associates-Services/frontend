@@ -503,6 +503,51 @@ export const waterAndSpaceHeatingaData = {
 
 export const waterPumpsData = {
   description:
-    '<h3>Something</h3><p>Water heating is a heat transfer process that uses an energy source to heat water above its initial temperature. Typical domestic uses of hot water include cooking, cleaning, bathing, and space heating. In industry, hot water and water heated to steam have many uses.</p><p>Electric space and water heating systems are second only to natural gas as the preferred primary heating choice for domestic, commercial and industrial premises in Nepal.</p>',
-  image: '/images/about-img.png',
+    '<p>Technical Associates Services (TAS) is an authorized distributor of world-renowned Danish Pump manufacturer Grundfos Ltd. in Nepal. Grundfos pioneer in providing solutions to the World and climate challenges in order to improve the quality of life of the people.</p>',
+  image: '/images/water pump.avif',
+}
+
+export const commercialWterPump = {
+  description:
+    '<ul> <li>Pumps for Hot Water for Water Transfer, Hot Water Circulation, solar.</li> <li>Pumps for Air-Conditioning for Water Transfer, Chilled Water Circulation.</li></ul>',
+  image: '/images/water pump.avif',
+}
+export const hotWaterHeatPumps = {
+  description:
+    '<p>Midea Air Source Heat Pumps is a very versatile product to heat water. Midea Hot Water Heat Pump utilizes worldwide proven technology to capture heat from the ambient air/water and transfer it to water as per requirement. Air to water heat pump water heater is a heat recovery system that generates hot water, chilled water or a combination of hot and chilled water at one energy cost. Here we move heat from one side to the other. The cost of moving heat is very low compared to creating heat. This energy-saving device helps you to save energy costs by over 65%. Compact and sleek designed water heaters blend beautifully with interiors.</p>',
+  image: '/images/hot water heat pumps.png',
+  title: 'Hot Water Heat Pumps',
+}
+
+export const areasOfApplication = [
+  {
+    image: '/images/hotel bed.png',
+    title: 'hotels',
+  },
+  {
+    image: '/images/hospital-building.png',
+    title: 'Hospitals',
+  },
+  {
+    image: '/images/dairy-products.png',
+    title: 'Diary',
+  },
+  {
+    image: '/images/industrial.png',
+    title: 'Industry',
+  },
+  {
+    image: '/images/residential.png',
+    title: 'Residential Building',
+  },
+  {
+    image: '/images/swimming-pool.png',
+    title: 'Swimming Pools',
+  },
+]
+export const featureAndBenefit = {
+  description:
+    '<ul> <li>Eco-friendly refrigerant R32</li> <li>Lower GWP 675 (GWP: Global Warming Potential)</li> <li>Zero impact on the ozone layer</li></ul>',
+  image: '/images/eco.jpg',
+  title: 'We are friendly to the environment',
 }

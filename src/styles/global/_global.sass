@@ -25,7 +25,6 @@
           text-transform: uppercase
           font-size: 14px
           transition: 0.3s ease
-          text-transform: uppercase
           font-weight: 500
           letter-spacing: 0.5px
           display: flex
@@ -48,13 +47,12 @@
         
           a
             color:#eee
-          .sub-menu
+          .sub-menu 
             position: absolute
             margin: 0
             width: 260px
             background-color: #111
             top: 100%
-            // left: -30px
             padding: 20px 0
             z-index: 55
             transition: all .3s ease
@@ -67,14 +65,44 @@
               border-right: 260px solid transparent
               border-top: 20px solid #111
             a
-              color: #eee  
+              color: #eee
+            i
+              color: #eee   
               
             .sub-menu__item
               font-size: 14px
               text-transform: capitalize
               padding: 0 30px
-              margin: 5px 0 10px   
-   
+              margin: 5px 0 10px 
+              transition: all .3s ease
+              &:hover
+                .sub-category
+                  display: block
+              .sub-category
+                position: absolute
+                margin: 0
+                width: 260px
+                background-color: #111
+                top: 0
+                left: -100%
+                padding: 20px 
+                z-index: 55
+                transition: all .3s ease
+                display: none
+                &::after
+                  content: ""
+                  position: absolute
+                  top: 100%
+                  left: 0
+                  border-right: 260px solid transparent
+                  border-top: 20px solid #111
+                a
+                  color: #eee
+                i
+                  color: #eee
+              
+                
+              
 .wrapper
   max-width: 1320px
   padding: 0 30px

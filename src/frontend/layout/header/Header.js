@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 import MenuItem from '../../../components/frontend/layout/header/MenuItem'
 import TopPanel from '../../../components/frontend/layout/header/TopPanel'
 import MobileMenu from '../../../components/frontend/layout/header/MobileMenu'
+import { productCategory } from '../../../data/data'
+import ProductCategory from '../../../components/frontend/layout/header/ProductCategory'
+import ProductSubCategory from '../../../components/frontend/layout/header/ProductSubCategory'
+import ProductChildCategory from '../../../components/frontend/layout/header/ProductChildCategory'
 const Header = () => {
   return (
     <>
@@ -40,21 +44,30 @@ const Header = () => {
 
                 <MenuItem title="our products" slug="/">
                   <ul className="sub-menu">
-                    <li className="sub-menu__item">
-                      <Link to="">Thermax Boilers</Link>
-                    </li>
-                    <li className="sub-menu__item">
-                      <Link to="product/water-pumps">Water Pumps</Link>
-                    </li>
-                    <li className="sub-menu__item">
-                      <Link to="">Compressed Air System</Link>
-                    </li>
-                    <li className="sub-menu__item">
-                      <Link to="">Fire Fighting System</Link>
-                    </li>
-                    <li className="sub-menu__item">
-                      <Link to="">Oxygen & Nitrogen Generators</Link>
-                    </li>
+                    {productCategory.map((item, index) => (
+                      <ProductCategory item={item} key={index}>
+                        {item.subCategory && (
+                          <ul className="sub-category">
+                            {item.subCategory.map((item, index) => (
+                              <ProductSubCategory item={item} key={index}>
+                                {item.subCategory.childCategory && (
+                                  <ul className="child-category">
+                                    {item.subCategory.childCategory.map(
+                                      (item, index) => (
+                                        <ProductChildCategory
+                                          item={item}
+                                          key={index}
+                                        />
+                                      )
+                                    )}
+                                  </ul>
+                                )}
+                              </ProductSubCategory>
+                            ))}
+                          </ul>
+                        )}
+                      </ProductCategory>
+                    ))}
                   </ul>
                 </MenuItem>
 

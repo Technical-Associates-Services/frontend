@@ -551,3 +551,132 @@ export const featureAndBenefit = {
   image: '/images/eco.jpg',
   title: 'We are friendly to the environment',
 }
+
+export const productCategory = [
+  {
+    id: 1,
+    category: 'Water & Space Heating Systems',
+    subCategory: [
+      {
+        id: 1,
+        subCategoryName: 'Water Heating',
+        childCategory: [
+          {
+            id: 1,
+            childCategoryName: 'Hot Water Heat Pumps',
+          },
+          {
+            id: 1,
+            childCategoryName: 'Thermal Solar Water Heater',
+          },
+          {
+            id: 1,
+            childCategoryName: 'Swimming Pool Heating',
+          },
+        ],
+      },
+      {
+        id: 2,
+        subCategoryName: 'Space Heating',
+      },
+      {
+        id: 3,
+        subCategoryName: 'Industrial Heating System',
+      },
+      {
+        id: 4,
+        subCategoryName: 'OEM',
+      },
+      {
+        id: 5,
+        subCategoryName: 'Accessories',
+      },
+    ],
+  },
+  {
+    id: 2,
+    category: 'Water and Waste',
+    subCategory: [
+      {
+        id: 1,
+        subCategoryName: 'Water Heating',
+      },
+      {
+        id: 2,
+        subCategoryName: 'Space Heating',
+      },
+      {
+        id: 3,
+        subCategoryName: 'Industrial Heating System',
+      },
+      {
+        id: 4,
+        subCategoryName: 'OEM',
+      },
+      {
+        id: 5,
+        subCategoryName: 'Accessories',
+      },
+    ],
+  },
+  {
+    id: 3,
+    category: 'Thermax Boilers',
+  },
+  {
+    id: 4,
+    category: 'water Pumps',
+  },
+  {
+    id: 5,
+    category: 'Compressed Air System',
+  },
+  {
+    id: 6,
+    category: 'Fire Fighting System',
+  },
+  {
+    id: 7,
+    category: 'Oxygen & Nitrogen Generators',
+  },
+  {
+    id: 8,
+    category: 'Hospital Solutions',
+    subCategory: [
+      {
+        id: 1,
+        subCategoryName: 'Water Heating',
+      },
+      {
+        id: 2,
+        subCategoryName: 'Space Heating',
+      },
+      {
+        id: 3,
+        subCategoryName: 'Industrial Heating System',
+      },
+      {
+        id: 4,
+        subCategoryName: 'OEM',
+      },
+      {
+        id: 5,
+        subCategoryName: 'Accessories',
+      },
+    ],
+  },
+  {
+    id: 9,
+    category: 'Others',
+    subCategory: [
+      {
+        id: 1,
+        subCategoryName: 'Water Heating',
+      },
+      {
+        id: 2,
+        subCategoryName: 'Space Heating',
+      },
+    ],
+  },
+]

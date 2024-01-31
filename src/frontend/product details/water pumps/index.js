@@ -14,11 +14,7 @@ const WaterPumps = () => {
         link="#"
         title="grundfos water pumps"
       />
-      {/* <ProductDetailCard
-        classes={12}
-        description={commercialWterPump.description}
-        newClass="mb-5"
-      /> */}
+     
       <ProductDetailCard
         title="Grundfos Industrial & Commercial Water Pumps In Nepal"
         description="<ul><li>Pumps for Hot Water for Water Transfer, Hot Water Circulation, solar.</li> <li>Pumps for Air-Conditioning for Water Transfer, Chilled Water Circulation.</li></ul>"
@@ -33,7 +29,7 @@ const WaterPumps = () => {
         description="<ul><li>Pumps for your Home for Water Transfer, Submersible Pumps, Water Treatment pumps, gardening pumps, wastewater pumps, rainwater pumps.</li>
         <li>Pumps for Apartments, Hotels & Hospitals for Water Transfer, Submersible Pumps, Air-conditioning Pumps, Hot water circulation pumps, Pressure Boosting pumps, Water Treatment Pumps, gardening pumps, wastewater pumps, and rainwater pumps.</li>
         </ul>"
-        image="/images/water-pump.webp"
+        image="/images/water-pump.png"
       />
     </>
   )

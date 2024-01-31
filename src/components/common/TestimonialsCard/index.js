@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // import required modules
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Autoplay } from 'swiper/modules'
 
 const TestimonialsCard = () => {
   return (
@@ -20,6 +20,10 @@ const TestimonialsCard = () => {
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 1,
@@ -34,10 +38,7 @@ const TestimonialsCard = () => {
                 spaceBetween: 50,
               },
             }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Autoplay]}
             className="mySwiper"
           >
             {testimonialsCards.map((testimonialsCard, index) => (

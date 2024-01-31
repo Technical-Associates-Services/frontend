@@ -47,7 +47,7 @@ const ProductDetailCard = ({
               ) : (
                 <Col lg={classes ? classes : 6}>
                   <div className="product__content">
-                    <CustomTitle title={title} />
+                    {title && <CustomTitle title={title} />}
                     <div
                       className="product__description"
                       dangerouslySetInnerHTML={{ __html: description }}

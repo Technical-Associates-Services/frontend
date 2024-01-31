@@ -12,6 +12,15 @@ const JacuzziHeating = () => {
         link="#"
         image="/images/jacuzzi.jpg"
       />
+      <ProductDetailCard
+        title="We are friendly to the environment"
+        description="<ul><li>Eco-friendly refrigerant R32</li>
+        <li>Lower GWP 675 (GWP: Global Warming Potential)</li></ul>"
+        image="/images/eco.jpg"
+        backgroundColor="#f8f8f8"
+        padding="4rem 0"
+        order={2}
+      />
     </>
   )
 }

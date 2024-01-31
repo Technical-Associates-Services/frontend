@@ -18,6 +18,8 @@ import HotWaterHeatPumps from '../frontend/product details/hot water heat pumps'
 import ThermalSolarWaterHeater from '../frontend/product details/thermal solar water heater'
 import SwimmingPoolHeating from '../frontend/product details/swimmimg pool heating'
 import JacuzziHeating from '../frontend/product details/jacuzzi heating'
+import SpaceHeating from '../frontend/product details/space heating'
+import MedicalGasPipelineSystem from '../frontend/product details/medical gas pipeline system'
 
 const PublicRouter = () => {
   return (
@@ -56,6 +58,11 @@ const PublicRouter = () => {
           element={<SwimmingPoolHeating />}
         />
         <Route path="/product/jacuzzi-heating" element={<JacuzziHeating />} />
+        <Route path="/product/space-heating" element={<SpaceHeating />} />
+        <Route
+          path="/product/medical-gas-pipeline-system"
+          element={<MedicalGasPipelineSystem />}
+        />
       </Routes>
     </>
   )

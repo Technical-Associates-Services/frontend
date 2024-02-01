@@ -12,9 +12,25 @@
       display: block
       @media ( max-width:1130px )
         display: none
-      & ul
+      ul
         margin-bottom: 0
         padding-left: 0
+        li
+          transition: all .3s ease
+          &:hover
+            a
+              color: #dd3333
+            i
+              color: #dd3333
+         
+            
+      a
+        color: #eee
+        display: flex
+        align-items: center
+      i
+        color: #eee
+        font-size: 24px  
       .menu__list
         display: flex
         justify-content: center
@@ -35,20 +51,11 @@
           position: relative
 
           &:hover
-            a
-              color: #dd3333
-            i
-              color:#dd3333   
+             
             .sub-menu
               display: block
            
-          i
-            color: #eee
-            font-size: 24px
-
-        
-          a
-            color:#eee
+         
           .sub-menu 
             position: absolute
             margin: 0
@@ -68,9 +75,18 @@
               border-top: 20px solid #111
             a
               color: #eee
+             
             i
               color: #eee
+            li
+              transition: all .3s ease
+              &:hover
+                a
+                  color: #dd3333
+                i
+                  color: #dd3333    
                 
+
               
             .sub-menu__item
               text-transform: capitalize
@@ -90,7 +106,7 @@
                 margin: 0
                 width: 260px
                 background-color: #111
-                top: 0
+                top: -25px
                 left: -100%
                 padding: 20px 
                 z-index: 55
@@ -103,6 +119,20 @@
                   left: 0
                   border-right: 260px solid transparent
                   border-top: 20px solid #111
+                a
+                  color: #eee
+                  display: flex
+                  align-items: center
+                i
+                  color: #eee
+                li
+                  transition: all .3s ease
+                  &:hover
+                    a
+                      color: #dd3333 
+                    i
+                      color: #dd3333    
+                  
                 .sub-category__item
                   padding: 0 12px
                   margin: 5px 0 10px
@@ -133,6 +163,17 @@
                       left: 0
                       border-right: 260px solid transparent
                       border-top: 20px solid #111724
+                    a
+                      color: #eee
+                    i
+                      color: #eee
+                    li
+                      transition: all .3s ease
+                      &:hover
+                        a
+                          color: #dd3333
+                        i
+                          color: #dd3333     
                     .child-category__item
                       padding: 0 12px
                       margin: 5px 0 10px

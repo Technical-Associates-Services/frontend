@@ -68,7 +68,7 @@ const ProductDetailCard = ({
               )}
 
               {image && (
-                <Col lg={6}>
+                <Col lg={classes ? classes : 6}>
                   <img className="product__image" src={image} alt="" />
                 </Col>
               )}

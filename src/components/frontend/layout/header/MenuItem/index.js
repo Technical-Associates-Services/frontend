@@ -5,9 +5,11 @@ import DropdownIcon from '../../../../../icons/DropdownIcon'
 const MenuItem = ({ index, title, slug, children }) => {
   return (
     <>
-      <li key={index} className="menu__item menu__link--acitve">
-        <Link to={slug}>{title}</Link>
-        {children && <DropdownIcon />}
+      <li key={index} className="menu__item ">
+        <Link to={slug}>
+          {title}
+          {children && <DropdownIcon />}
+        </Link>
         {children && children}
       </li>
     </>

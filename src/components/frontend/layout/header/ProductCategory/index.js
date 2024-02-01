@@ -6,8 +6,10 @@ const ProductCategory = ({ item, children }) => {
   return (
     <>
       <li className="sub-menu__item">
-        <Link to="#">{item.category}</Link>
-        {children && <DroprightIcon />}
+        <Link to={item.slug}>
+          {item.category}
+          {children && <DroprightIcon />}
+        </Link>
         {children && children}
       </li>
     </>

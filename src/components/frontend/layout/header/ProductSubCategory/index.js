@@ -6,8 +6,10 @@ const ProductSubCategory = ({ item, children }) => {
   return (
     <>
       <li className="sub-category__item">
-        <Link to="">{item.subCategoryName}</Link>
-        {children && <DroprightIcon />}
+        <Link to={item.slug}>
+          {item.subCategoryName}
+          {children && <DroprightIcon />}
+        </Link>
         {children && children}
       </li>
     </>

@@ -555,7 +555,8 @@ export const featureAndBenefit = {
 export const productCategory = [
   {
     id: 1,
-    category: 'Water & Space Heating Systems',
+    category: 'Water & Space Heating Systems ',
+    slug: '/product/water-space-heating-systems',
     subCategory: [
       {
         id: 1,
@@ -564,20 +565,29 @@ export const productCategory = [
           {
             id: 1,
             childCategoryName: 'Hot Water Heat Pumps',
+            slug: '/product/hot-water-heat-pumps',
           },
           {
-            id: 1,
+            id: 2,
             childCategoryName: 'Thermal Solar Water Heater',
+            slug: '/product/thermal-solar-water-heater',
           },
           {
-            id: 1,
+            id: 3,
             childCategoryName: 'Swimming Pool Heating',
+            slug: '/product/swimming-pool-heating',
+          },
+          {
+            id: 4,
+            childCategoryName: 'Jacuzzi Heating',
+            slug: '/product/jacuzzi-heating',
           },
         ],
       },
       {
         id: 2,
         subCategoryName: 'Space Heating',
+        slug: '/product/space-heating',
       },
       {
         id: 3,
@@ -615,33 +625,36 @@ export const productCategory = [
     subCategory: [
       {
         id: 1,
-        subCategoryName: 'Water Heating',
+        subCategoryName: 'Waste & Effluent Treatment',
       },
       {
         id: 2,
-        subCategoryName: 'Space Heating',
+        subCategoryName: 'Water Treatment System',
+        slug: 'product/water-treatment-system',
       },
       {
         id: 3,
-        subCategoryName: 'Industrial Heating System',
+        subCategoryName: 'Swimming Pools and SPA',
       },
       {
         id: 4,
-        subCategoryName: 'OEM',
+        subCategoryName: 'Water Features- & Fountains',
       },
       {
         id: 5,
-        subCategoryName: 'Accessories',
+        subCategoryName: 'Sprinklers & Irrigation System',
       },
     ],
   },
   {
     id: 3,
     category: 'Thermax Boilers',
+    slug: 'https://www.thermaxglobal.com/ThermaxTCA/?tca_data_organization=5',
   },
   {
     id: 4,
     category: 'water Pumps',
+    slug: '/product/water-pumps',
   },
   {
     id: 5,
@@ -661,23 +674,25 @@ export const productCategory = [
     subCategory: [
       {
         id: 1,
-        subCategoryName: 'Water Heating',
+        subCategoryName: 'Medical Curtain & Track System',
       },
       {
         id: 2,
-        subCategoryName: 'Space Heating',
+        subCategoryName: 'Medical Gas Pipeline System',
+        slug: '/product/medical-gas-pipeline-system',
       },
       {
         id: 3,
-        subCategoryName: 'Industrial Heating System',
+        subCategoryName: 'Modular Operation Theatres',
       },
       {
         id: 4,
-        subCategoryName: 'OEM',
+        subCategoryName: 'Medical Waste Management',
+        slug: 'https://www.medicalwastenepal.com/',
       },
       {
         id: 5,
-        subCategoryName: 'Accessories',
+        subCategoryName: 'Pneuamtic Tube System',
       },
     ],
   },
@@ -687,11 +702,11 @@ export const productCategory = [
     subCategory: [
       {
         id: 1,
-        subCategoryName: 'Water Heating',
+        subCategoryName: 'Alfa Laval',
       },
       {
         id: 2,
-        subCategoryName: 'Space Heating',
+        subCategoryName: 'Water & Oil Flow Meters',
       },
     ],
   },

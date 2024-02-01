@@ -582,10 +582,26 @@ export const productCategory = [
       {
         id: 3,
         subCategoryName: 'Industrial Heating System',
+        childCategory: [
+          {
+            id: 1,
+            childCategoryName: 'High Temperature Hot Water Heat Pumps',
+          },
+          {
+            id: 1,
+            childCategoryName: 'Solar Water Heating System',
+          },
+        ],
       },
       {
         id: 4,
         subCategoryName: 'OEM',
+        childCategory: [
+          {
+            id: 1,
+            childCategoryName: 'Hot Water Storage Tanks',
+          },
+        ],
       },
       {
         id: 5,

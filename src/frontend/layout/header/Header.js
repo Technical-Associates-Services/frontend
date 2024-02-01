@@ -49,17 +49,19 @@ const Header = () => {
                         {item.subCategory && (
                           <ul className="sub-category">
                             {item.subCategory.map((item, index) => (
-                              <ProductSubCategory item={item} key={index}>
-                                {item.subCategory.childCategory && (
+                              <ProductSubCategory
+                                ctSubCategory
+                                item={item}
+                                key={index}
+                              >
+                                {item.childCategory && (
                                   <ul className="child-category">
-                                    {item.subCategory.childCategory.map(
-                                      (item, index) => (
-                                        <ProductChildCategory
-                                          item={item}
-                                          key={index}
-                                        />
-                                      )
-                                    )}
+                                    {item.childCategory.map((item, index) => (
+                                      <ProductChildCategory
+                                        item={item}
+                                        key={index}
+                                      />
+                                    ))}
                                   </ul>
                                 )}
                               </ProductSubCategory>

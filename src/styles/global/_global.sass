@@ -20,6 +20,7 @@
         justify-content: center
         align-items: center   
         gap: 2rem
+        
       
         .menu__item
           text-transform: uppercase
@@ -31,6 +32,7 @@
           justify-content: center
           align-items: center
           padding: 1rem 0
+          position: relative
 
           &:hover
             a
@@ -67,14 +69,19 @@
             a
               color: #eee
             i
-              color: #eee   
+              color: #eee
+                
               
             .sub-menu__item
-              font-size: 14px
               text-transform: capitalize
-              padding: 0 30px
+              padding: 0 12px
               margin: 5px 0 10px 
               transition: all .3s ease
+              position: relative
+              letter-spacing: 0px
+              display: flex
+              align-items: center
+              
               &:hover
                 .sub-category
                   display: block
@@ -96,10 +103,43 @@
                   left: 0
                   border-right: 260px solid transparent
                   border-top: 20px solid #111
-                a
-                  color: #eee
-                i
-                  color: #eee
+                .sub-category__item
+                  padding: 0 12px
+                  margin: 5px 0 10px
+                  letter-spacing: 0px
+                  position: relative
+                  display: flex
+                  align-items: center
+                  &:hover
+                    .child-category
+                      display: block
+                    
+
+                  .child-category
+                    position: absolute
+                    margin: 0
+                    width: 260px
+                    background-color: #111724
+                    top: 0
+                    left: 100%
+                    padding: 20px 
+                    z-index: 55
+                    transition: all .3s ease
+                    display: none
+                    &::after
+                      content: ""
+                      position: absolute
+                      top: 100%
+                      left: 0
+                      border-right: 260px solid transparent
+                      border-top: 20px solid #111724
+                    .child-category__item
+                      padding: 0 12px
+                      margin: 5px 0 10px
+                      letter-spacing: 0px
+                      display: flex
+                      align-items: center   
+                    
               
                 
               

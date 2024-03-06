@@ -15,11 +15,8 @@ const App = () => {
         <ScrollToTop />
         <ScrollButton />
         <Enquiry />
-
         <Header />
-
         <PublicRouter />
-
         <Footer />
       </Router>
     </>

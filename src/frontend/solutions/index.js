@@ -20,7 +20,7 @@ const Solutions = () => {
                       alt="solutions"
                     />
                     <div className="overlay">
-                      <Link to="/solutions-details">
+                      <Link to={card.slug}>
                         <i class="ri-links-fill"></i>
                       </Link>
                     </div>
@@ -29,7 +29,7 @@ const Solutions = () => {
                   <div className="solutions__content">
                     <h4 className="solutions__title">{card.title}</h4>
                     <p className="solutions__samary">{card.description}</p>
-                    <Link to="/solutions-details">
+                    <Link to={card.slug}>
                       <div className="read-btn">Read More</div>
                     </Link>
                   </div>

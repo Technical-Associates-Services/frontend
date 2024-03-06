@@ -13,7 +13,7 @@ const Contact = () => {
           <Row>
             <Col lg={5}>
               <div className="contact__form-sec">
-                <h3>Get in touch with us</h3>
+                <h3 className="mb-0">Get in touch with us</h3>
                 <form className="contact__form">
                   <div className="form-group">
                     <input
@@ -48,23 +48,27 @@ const Contact = () => {
             </Col>
             <Col lg={7}>
               <div className="contact__info--sec">
-                <h3>Contact Information</h3>
+                <h3 className="mb-0">Contact Information</h3>
 
                 <ul className="contact__info">
-                  <li className="info address">
+                  <li className="info address mb-3 align-items-start">
                     <i class="ri-map-pin-2-line"></i>
-                    <p>
-                      Aspen Marg, Maitighar, St. Xavier College Rd, Kathmandu,
-                      Nepal – 44600
-                    </p>
+                    <div className="address">
+                      <p className="w-100 mb-1">Aspen Marg, Maitighar,</p>
+                      <p className="w-100 mb-1">
+                        St. Xavier College Rd, Kathmandu,
+                      </p>
+
+                      <p className="w-100 mb-1">Nepal – 44600</p>
+                    </div>
                   </li>
-                  <li className="info number">
+                  <li className="info number mb-3 align-items-center">
                     <i class="ri-phone-line"></i>
-                    <p>01-5339555</p>
+                    <p className="mb-0">01-5339555</p>
                   </li>
-                  <li className="info email">
+                  <li className="info email mb-3 align-items-center">
                     <i class="ri-mail-line"></i>
-                    <p>info@tas.com.np</p>
+                    <p className="mb-0">info@tas.com.np</p>
                   </li>
                 </ul>
               </div>

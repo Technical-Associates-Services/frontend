@@ -1,8 +1,14 @@
 .sister-concern
+    margin-bottom: -30px
     .block
-        background-color: #f8f8f8
+        background-color: inherit
         padding: 4rem 0
         margin: 2rem 0
+        &:first-child
+          padding-top: 0px
+          margin-top: 0px
+        &:last-child
+          padding-bottom: 7rem
         & ul
             li
                 list-style-type: square
@@ -22,8 +28,8 @@
                 max-width: 100%
                 height: auto
 
-        &:nth-child(2)
-            background-color: transparent
+        &:nth-child(even)
+            background-color: #f8f8f8
             .block__left
                 flex-direction: column
                 justify-content: flex-start

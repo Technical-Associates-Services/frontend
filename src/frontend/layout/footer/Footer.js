@@ -24,9 +24,10 @@ const Footer = () => {
                       alt="logo"
                     />
                   </Link>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Distinctio, nostrum et quisquam quae.
+                  <p className="mb-0">
+                    Technical Associates Services (TAS) aim to provide cost
+                    effective engineering solutions to people and industries in
+                    Nepal.
                   </p>
                   <form>
                     <input
@@ -74,8 +75,9 @@ const Footer = () => {
                         <li className="info address">
                           <i className="ri-map-pin-2-line"></i>
                           <p>
-                            Aspen Marg, Maitighar, St. Xavier College Rd,
-                            Kathmandu, Nepal – 44600
+                            Aspen Marg, Maitighar,
+                            <br /> St. Xavier College Rd, Kathmandu, Nepal –
+                            44600
                           </p>
                         </li>
                         <li className="info number">

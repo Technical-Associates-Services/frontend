@@ -331,6 +331,7 @@ export const solutionCard = [
     title: 'Hospitality Solutions',
     description:
       ' Alternate Energy Download Doc Download PDF Lorem ipsum dolor...',
+    slug: '/solutions-details',
   },
   {
     id: 2,
@@ -338,6 +339,7 @@ export const solutionCard = [
     title: 'Industrial Solutions',
     description:
       ' Alternate Energy Download Doc Download PDF Lorem ipsum dolor...',
+    slug: 'https://futuretechniques.com.np/',
   },
   {
     id: 3,
@@ -345,6 +347,7 @@ export const solutionCard = [
     title: 'Residential Solutions',
     description:
       ' Alternate Energy Download Doc Download PDF Lorem ipsum dolor...',
+    slug: '/solutions-details',
   },
 ]
 

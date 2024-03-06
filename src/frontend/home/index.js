@@ -13,11 +13,9 @@ const Home = () => {
     <>
       <Banner />
       <About />
-
       <LatestProjects />
       <Overview />
       <TestimonialsCard />
-
       <Blog />
     </>
   )

@@ -12,18 +12,18 @@ const TopPanel = () => {
           <div className="toppanel__social--list">
             <ul className="social-icons">
               <li className="icon">
-                <Link to="">
+                <Link to="https://www.facebook.com/tas.com.np">
                   <i className="ri-facebook-fill"></i>
                 </Link>
               </li>
               <li className="icon">
-                <Link to="">
-                  <i className="ri-twitter-line"></i>
+                <Link to="https://www.instagram.com/tasnepal">
+                  <i className="ri-instagram-line"></i>
                 </Link>
               </li>
               <li className="icon">
-                <Link to="">
-                  <i className="ri-instagram-line"></i>
+                <Link to="https://www.linkedin.com/company/technicalassociates/">
+                  <i className="ri-linkedin-line"></i>
                 </Link>
               </li>
             </ul>

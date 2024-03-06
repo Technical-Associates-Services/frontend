@@ -1,7 +1,14 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import CustomButton from '../../../../components/common/button/CustomButton'
-import { Link } from 'react-router-dom'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+// Import Swiper styles
+import 'swiper/css'
+import { overviews } from '../../../../data/overview'
+// import required modules
+import { Autoplay } from 'swiper/modules'
+
 const Overview = () => {
   return (
     <>
@@ -11,22 +18,27 @@ const Overview = () => {
           style={{ backgroundImage: 'url("/images/Group-1.jpg")' }}
         >
           <Container>
-            <div className="overview__content">
-              <div className="custom-wrapper">
-                <div className="overview__subtitle">
-                  Providing the Best Sustainable Heating Solution With
-                </div>
-                <div className="overview__title">THERMAX TCA</div>
-                <div className="overview__samary">
-                  We are the authorized distributors of Thermax Global providing
-                  the best Domestic and Industrial heating solution and boilers
-                  in Nepal
-                </div>
-              </div>
-              <Link to="">
-                <CustomButton btnData="Explore More" />
-              </Link>
-            </div>
+            <Swiper
+              className="mySwiper"
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {overviews.map((item, index) => (
+                <SwiperSlide>
+                  <div className="overview__content d-flex align-items-center gap-5">
+                    <div className="custom-wrapper">
+                      <div className="overview__subtitle">{item.subTitle}</div>
+                      <div className="overview__title">{item.title}</div>
+                      <div className="overview__samary ">{item.summary}</div>
+                    </div>
+                    <CustomButton btnData="Explore More" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Container>
         </div>
       </div>

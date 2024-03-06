@@ -21,24 +21,24 @@ const AboutTas = () => {
       <CustomBreadcrumb title="About TAS" subtitle="about tas" />
       <Container>
         <div className="tas">
-          <Row>
+          <Row className="g-5">
             <Col lg={6}>
               <img
-                src="/images/tas-company.jpg"
-                className="tas__image"
+                src="/images/about.png"
+                className="tas__image img-fluid"
                 alt="tas"
               />
             </Col>
             <Col lg={6}>
               <div className="tas__content">
                 <CustomTitle title="about TAS" />
-                <p className="tas__description">
+                <p className="tas__description text-align">
                   <strong>Technical Associates Services P. Ltd. </strong>was
                   formed in the year <strong>2002&nbsp;</strong>with an aim to
                   provide cost effective engineering solutions to Nepalese
                   people and industries.
                 </p>
-                <p className="tas__description">
+                <p className="tas__description text-align">
                   We provide complete solutions for Water Treatment Systems,
                   Waste Treatment Systems, Water Treatment Accessories, Water
                   Heating Systems, Pharma water distributions system, Pumping
@@ -47,7 +47,7 @@ const AboutTas = () => {
                   solutions, PSA type Oxygen & Nitrogen Generators, Modular
                   Operation Theatres, Fire Fighting Systems and Flowmeters.
                 </p>
-                <p className="tas__description">
+                <p className="tas__description text-align">
                   Our office is located at the heart of Kathmandu city in
                   Maitighar Mandala, with all the required infrastructure. We
                   also have a branch office and warehouse located at Birgunj.

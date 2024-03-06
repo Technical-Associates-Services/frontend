@@ -18,7 +18,7 @@ const Projects = () => {
                 <div className="project__left--content">
                   <div className="project__left__sticky--section">
                     <CustomTitle
-                      title="Our latest products"
+                      title="Our  Products"
                       customStyle={{ width: '300px' }}
                     />
                     <p>

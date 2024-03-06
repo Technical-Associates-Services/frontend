@@ -8,6 +8,7 @@ import FooterProduct from '../../../components/frontend/layout/footer/FooterProd
 import { footerData } from '../../../data/data'
 import CustomButton from '../../../components/common/button/CustomButton'
 import SendIcon from '../../../icons/SendIcon'
+import { FooterLogo, FooterLogoContainer, FooterParent } from './styles'
 const Footer = () => {
   return (
     <>
@@ -17,13 +18,25 @@ const Footer = () => {
             <Row>
               <Col lg={4}>
                 <div className="footer__logo-section">
-                  <Link to="/">
-                    <img
-                      className="footer__logo"
-                      src="/images/logo.png"
-                      alt="logo"
-                    />
-                  </Link>
+                  <FooterLogoContainer className="d-flex gap-4 align-items-center mb-4">
+                    <Link to="/">
+                      <img
+                        className="footer__logo"
+                        src="/images/logo.png"
+                        alt="logo"
+                      />
+                    </Link>
+                    <FooterParent>
+                      <img
+                        className="img-fluid"
+                        src="/images/kg.png"
+                        alt="logo"
+                      />
+                    </FooterParent>
+                  </FooterLogoContainer>
+                  <FooterLogo>
+                    <p className="mb-4 text">TAS : A part of Kusum Group</p>
+                  </FooterLogo>
                   <p className="mb-0">
                     Technical Associates Services (TAS) aim to provide cost
                     effective engineering solutions to people and industries in
@@ -101,9 +114,9 @@ const Footer = () => {
             <div className="bottom-list">
               <div className="footer__copyright">Copyright &copy; 2023 TAS</div>
               <div className="footer__credit">
-                Designed & Developed By:
+                Powered By:
                 <Link to="https://infinityinfosys.com/" target="_blank">
-                  Infinity Infosys Pvt. Ltd.
+                  Infinity Infosys
                 </Link>
               </div>
             </div>

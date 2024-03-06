@@ -22,17 +22,19 @@ const Projects = () => {
                       customStyle={{ width: '300px' }}
                     />
                     <p>
-                      At Industify Company, we rely on honesty, discipline and
-                      hard work and believe our success can be attributed to
-                      upholding a simple set of core values that date back to
-                      the beginning of the company.
+                      Technical Associates Services (TAS) aim to provide cost
+                      effective engineering solutions to people and industries
+                      in Nepal.
                     </p>
                     <p>
-                      Industify is an integrated design-build firm offering
-                      engineering, architecture and construction services to
-                      domestic and international customers throughout the U.S.
-                      Unique to Industify is the fact that we conduct all
-                      disciplines in-house in a collaborative environment.
+                      We provide complete solutions for Water Treatment Systems,
+                      Waste Treatment Systems, Water Treatment accessories,
+                      Pharma water distributions system, Pumping Solutions
+                      (Grundfos Pumps), Compressed Air Systems, Medical Gas
+                      Pipeline Systems, Sprinklers & Irrigation System,
+                      Professional Laundry solutions, PSA type Oxygen & Nitrogen
+                      Generators, Modular Operation Theatres, Fire Fighting
+                      Systems and Flowmeters.
                     </p>
                     <div className="button">
                       <Link to="">

@@ -7,11 +7,13 @@ import { Footer, Header } from '../frontend/home/components'
 import ScrollToTop from '../ScrollToTop'
 import ScrollButton from '../components/ScrollButton'
 import Enquiry from '../components/EnquiryUs'
+import SEO from '../seo'
 
 const App = () => {
   return (
     <>
       <Router>
+        <SEO />
         <ScrollToTop />
         <ScrollButton />
         <Enquiry />

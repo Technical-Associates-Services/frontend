@@ -157,7 +157,6 @@ const SisterConcern = () => {
                   <Collapse in={open2}>
                     <div id="example-collapse-text1">
                       <ul>
-                        <li>GE Healthcare(Medical Equipments)</li>
                         <li>Paramount Beds (Hospital Furnitures)</li>
                       </ul>
                     </div>
@@ -197,7 +196,6 @@ const SisterConcern = () => {
                   <Collapse in={open3}>
                     <div id="example-collapse-text1">
                       <ul>
-                        <li>GE Healthcare(Medical Equipments)</li>
                         <li>Paramount Beds (Hospital Furnitures)</li>
                       </ul>
                     </div>

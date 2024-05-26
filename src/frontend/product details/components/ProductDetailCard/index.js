@@ -59,7 +59,7 @@ const ProductDetailCard = ({
                         </span>
                         <h6>GET THE PRODUCT PROFILE (PDF)</h6>
                         <Link to={link}>
-                          <CustomButton btnData="download bhochure" />
+                          <CustomButton btnData="download Brochure" />
                         </Link>
                       </div>
                     )}

@@ -20,6 +20,7 @@ import SwimmingPoolHeating from '../frontend/product details/swimmimg pool heati
 import JacuzziHeating from '../frontend/product details/jacuzzi heating'
 import SpaceHeating from '../frontend/product details/space heating'
 import MedicalGasPipelineSystem from '../frontend/product details/medical gas pipeline system'
+import ReferencesPage from '../frontend/references'
 
 const PublicRouter = () => {
   return (
@@ -36,6 +37,7 @@ const PublicRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/solutions-details" element={<SolutionsDetails />} />
         <Route path="/solution" element={<Solutions />} />
+        <Route path="/references" element={<ReferencesPage />} />
         <Route
           path="/product/water-space-heating-systems"
           element={<WaterAndSpaceHeating />}

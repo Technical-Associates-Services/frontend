@@ -1,0 +1,49 @@
+.references
+  padding: 3rem 0
+  .references__images--section
+    overflow: hidden
+
+    .references__image
+        width: 100%
+        height: 330px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        display: block
+        position: relative
+        transition: all 0.3s ease-in-out
+        &:hover
+            transform: scale(1.01)
+            .content-wrap
+                .content-title
+                    color: #dd3333
+        &::before
+                content: ''
+                height: 100%
+                width: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.68), transparent, transparent, transparent)
+                z-index: 4
+        .content-wrap
+            position: absolute
+            bottom: 10px
+            left: 0
+            padding: 0 10px
+            z-index: 10
+            .content-title
+                    font-size: 17px
+                    font-weight: 600
+                    color: #eee
+                    text-transform: capitalize
+                    transition: all 0.3s ease-in-out
+
+    .references__content
+        padding-left: 2rem
+        .references__text
+            font-size: 14px 
+            color: #666
+            margin: 25px 0 
+            line-height: 24px 
+

@@ -8,6 +8,7 @@ import 'swiper/css'
 import { overviews } from '../../../../data/overview'
 // import required modules
 import { Autoplay } from 'swiper/modules'
+import { Link } from 'react-router-dom'
 
 const Overview = () => {
   return (
@@ -34,7 +35,9 @@ const Overview = () => {
                       <div className="overview__title">{item.title}</div>
                       <div className="overview__samary ">{item.summary}</div>
                     </div>
-                    <CustomButton btnData="Explore More" />
+                    <Link to="#">
+                      <CustomButton btnData="Explore More" />
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}

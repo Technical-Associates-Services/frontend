@@ -7,6 +7,7 @@ import {
   Overview,
   TestimonialsCard,
 } from './components'
+import References from './components/references'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner />
       <About />
       <LatestProjects />
+      <References />
       <Overview />
       <TestimonialsCard />
       <Blog />

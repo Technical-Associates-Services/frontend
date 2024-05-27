@@ -714,3 +714,17 @@ export const productCategory = [
     ],
   },
 ]
+export const referencesImages = [
+  {
+    image: '/images/img-4.jpg',
+    title: 'Regulatory Compliance System',
+  },
+  {
+    image: '/images/img-3.jpg',
+    title: 'Regulatory Compliance System',
+  },
+  {
+    image: '/images/img-5.jpg',
+    title: 'Regulatory Compliance System',
+  },
+]

@@ -24,7 +24,6 @@ const Header = () => {
             <div className="header__menu">
               <ul className="menu__list">
                 <MenuItem title="home" slug="/" />
-
                 <MenuItem title="about us" slug="/">
                   <ul className="sub-menu">
                     <li className="sub-menu__item">
@@ -38,9 +37,10 @@ const Header = () => {
                     </li>
                   </ul>
                 </MenuItem>
-
                 <MenuItem title="services" slug="/services" />
-                <MenuItem title="solution" slug="/solution"></MenuItem>
+                <MenuItem title="solution" slug="/solution" />
+
+                <MenuItem title="references" slug="/references" />
 
                 <MenuItem title="our products" slug="/">
                   <ul className="sub-menu">
@@ -72,7 +72,6 @@ const Header = () => {
                     ))}
                   </ul>
                 </MenuItem>
-
                 <MenuItem title="contact us" slug="/contact-us" />
               </ul>
             </div>

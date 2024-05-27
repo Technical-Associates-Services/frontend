@@ -28,7 +28,7 @@ const Overview = () => {
               modules={[Autoplay]}
             >
               {overviews.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <div className="overview__content d-flex align-items-center gap-5">
                     <div className="custom-wrapper">
                       <div className="overview__subtitle">{item.subTitle}</div>

@@ -1,5 +1,7 @@
 .references
-  padding: 3rem 0
+  padding: 4rem 0
+  .swiper-wrapper
+    padding-bottom: 0
   .references__images--section
     overflow: hidden
 
@@ -34,16 +36,18 @@
             z-index: 10
             .content-title
                     font-size: 17px
-                    font-weight: 600
+                    font-weight: 500
                     color: #eee
                     text-transform: capitalize
                     transition: all 0.3s ease-in-out
 
-    .references__content
-        padding-left: 2rem
-        .references__text
-            font-size: 14px 
-            color: #666
-            margin: 25px 0 
-            line-height: 24px 
+  .references__content
+    padding-left: 1rem
+    @media screen and (max-width:992px)
+        margin-top: 2rem
+    .references__text
+        font-size: 14px 
+        color: #666
+        margin: 25px 0 
+        line-height: 24px 
 

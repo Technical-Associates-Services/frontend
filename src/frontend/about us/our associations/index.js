@@ -24,17 +24,19 @@ const OurAssociation = () => {
         </div>
       </Container>
 
-      <div className="distributors-section">
+      <div className="brand__section">
         <Container>
           <CustomTitle title="distributors" />
-          <div className="distributors">
+          <div className="brand">
             {distributors.map((distributor, index) => (
-              <div className="distributors__card" key={index}>
+              <div className="brand__card" key={index}>
                 <Link to="">
                   <img
-                    className="distributors__image"
+                    className="brand__image"
                     src={distributor.logo}
-                    alt=""
+                    alt="image"
+                    width="100%"
+                    height="100%"
                   />
                 </Link>
               </div>
@@ -46,11 +48,17 @@ const OurAssociation = () => {
       <Container>
         <div className="other-associations-section">
           <CustomTitle title="other associations" />
-          <div className="associations">
+          <div className="brand">
             {associations.map((logo, index) => (
-              <div className="associations__card">
+              <div className="brand__card" key={index}>
                 <Link to="">
-                  <img className="associations__image" src={logo.logo} alt="" />
+                  <img
+                    className="brand__image"
+                    src={logo.logo}
+                    alt="image"
+                    width="100%"
+                    height="100%"
+                  />
                 </Link>
               </div>
             ))}

@@ -1,39 +1,36 @@
 footer
-  background-color: #111724
+  background-color: $secondary-color
   position: relative
   z-index: 1
   padding-left: 20px
-  &::before
-    content: ""
-    position: absolute
-    width: 50%
-    top:-54px
-    left: 0
-    height:300px
-    clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)
-    background-color: #111724
-    z-index: -1
 
+  &::before,
   &::after
     content: ""
     position: absolute
     width: 50%
-    top:-54px
-    right: 0
-    height:300px
+    top: -54px
+    height: 300px
     clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)
-    background-color: #111724
-    z-index: -1 
-    
+    background-color: $secondary-color
+    z-index: -1
+
+  &::before
+    left: 0
+
+  &::after
+    right: 0
 
   .footer__content
     color: #eee
     padding: 5rem 0
-    & h4
+
+    h4
       font-size: 20px
       position: relative 
       margin-bottom: 2rem
       display: inline-block
+
       &::after
         content: ""
         position: absolute 
@@ -42,44 +39,45 @@ footer
         width: 120px 
         height: 1px
         background-color: #b9b7b7
+
       &::before
         content: ""
         position: absolute
         bottom: -16px
+        left: 40px
         width: 40px 
         height: 3px
-        left: 40px
         background-color: #d24e1a
         z-index: 1
-    & ul
+
+    ul
       padding-left: 0
-    & a
+
+    a
       color: #eee
       font-size: 14px
       text-transform: capitalize
-    & p
-      margin-bottom: 0
-      font-size: 14px  
-    & li
-      padding-bottom: 1rem
-    & .item
-      transition: 0.3 ease
-      &:hover
-        & a
-          color:#dd3333 !important   
+      transition: 0.3s ease
 
-      
+      &:hover
+        color: $primary-color
+
+    .item
+      transition: 0.3s ease
+      padding-bottom: 1rem
+
     .footer__logo-section
       .footer__logo
         max-width: 75px
         height: auto
-      @media screen and ( max-width: 992px  )
+
+      @media screen and (max-width: 992px)
         margin-bottom: 1rem
-          
-          
+
       form
         display: flex
         margin-top: 2rem
+
         input
           width: 80%
           padding: .6rem .5rem 
@@ -87,6 +85,7 @@ footer
           color: #eee
           font-size: 14px 
           border: 1px solid #b9b7b7
+
         .send-btn
           padding: 0.7rem 1rem 
           background-color: #dd3333
@@ -94,39 +93,27 @@ footer
           border-right: 1px solid #b9b7b7
           border-bottom: 1px solid #b9b7b7
 
-
     .footer__contact
       .contact-info
         .info
           display: flex
           gap: 1rem
+
           i
             font-size: 18px
             color: #dd3333
-           
-           
 
-    
-           
-
-        
-
-
-       
-     
-         
-    
   .footer__bottom
     background-color: #181e2b
     color: #eee
+
     .bottom-list
       display: flex
       justify-content: space-between
       align-items: center
       padding: 1rem 0
       font-size: 13px
-      & a
+
+      a
         color: #eee
         padding-left: 5px
-
-      

@@ -1,47 +1,52 @@
 .sister-concern
-    margin-bottom: -30px
-    .block
-        background-color: inherit
-        padding: 4rem 0
-        margin: 2rem 0
-        &:first-child
-          padding-top: 0px
-          margin-top: 0px
-        &:last-child
-          padding-bottom: 7rem
-        & ul
-            li
-                list-style-type: square
-                font-size: 14px
-                color: #666
-                line-height: 30px
-        & .block__description
-            font-size: 14px
-            color: #666
-            line-height: 24px     
+  margin-bottom: -30px
 
-        .block__left
-            display: flex
-            justify-content: center
-            align-items: center
-            .block__logo
-                max-width: 100%
-                height: auto
+  .block
+    background-color: inherit
+    padding: 4rem 0
+    margin: 2rem 0
 
-        &:nth-child(even)
-            background-color: #f8f8f8
-            .block__left
-                flex-direction: column
-                justify-content: flex-start
-                align-items: flex-start
-            .block__right
-                display: flex
-                justify-content: center
-                align-items: center
-                .block__logo
-                    max-width: 100%
-                    height: auto
+    &:first-child
+      padding-top: 0
+      margin-top: 0
 
-            
+    &:last-child
+      padding-bottom: 7rem
 
-        
+    ul
+      li
+        list-style-type: square
+        font-size: 14px
+        color: #666
+        line-height: 30px
+
+    .block__description
+      font-size: 14px
+      color: #666
+      line-height: 24px     
+
+    .block__left
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .block__logo
+        max-width: 100%
+        height: auto
+
+    &:nth-child(even)
+      background-color: #f8f8f8
+
+      .block__left
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+
+      .block__right
+        display: flex
+        justify-content: center
+        align-items: center
+
+        .block__logo
+          max-width: 100%
+          height: auto

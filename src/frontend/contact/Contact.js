@@ -12,38 +12,40 @@ const Contact = () => {
         <div className="contact">
           <Row>
             <Col lg={5}>
-              <div className="contact__form-sec">
+              <div className="contact__form--sec">
                 <h3 className="mb-0">Get in touch with us</h3>
-                <form className="contact__form">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Name"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows="10"
-                      placeholder="Message"
-                      required
-                    ></textarea>
-                  </div>
-                  <button type="submit">send message</button>
-                </form>
+                <div className="contact__form--box">
+                  <form className="contact__form">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Name"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows="10"
+                        placeholder="Message"
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit">send message</button>
+                  </form>
+                </div>
               </div>
             </Col>
             <Col lg={7}>

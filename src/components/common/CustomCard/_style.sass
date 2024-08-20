@@ -1,4 +1,4 @@
-.card
+.custom-card
   display: grid
   grid-template-columns: 1fr 1fr
   border: none
@@ -7,12 +7,13 @@
     grid-template-columns: 1fr
 
     
-  .card__image
+  .custom-card__image
     width: 100%
     height: 300px
     object-fit: cover
+    background-color: #ffffff
   
-  .card__info
+  .custom-card__info
     background-color: #181e2b
     padding: 0 30px
     display: flex
@@ -20,7 +21,7 @@
     flex-direction: column
     @media ( max-width: 768px  )
       padding: 30px 
-    .card__title
+    .custom-card__title
       font-size: 24px
       font-weight: 700
       color: #eee
@@ -28,7 +29,7 @@
       text-transform: capitalize
       &:hover
         color: #dd3333
-    .card__summary
+    .custom-card__summary
       margin: 15px 0
       font-size: 14px
       line-height: 24px
@@ -42,12 +43,15 @@
         width: 100%
         height: 1px
         background-color: #979797
-    .card__button
+    .custom-card__button
       margin-top: 30px
       a
         font-size: 18px
         text-transform: capitalize
         color: #eee
+        transition: 0.3s ease
+        &:hover
+          color: $primary-color
   &:last-child
     margin-bottom: 0      
 

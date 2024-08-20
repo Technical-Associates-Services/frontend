@@ -31,7 +31,7 @@ const AboutTas = () => {
             </Col>
             <Col lg={6}>
               <div className="tas__content">
-                <CustomTitle title="about TAS" />
+                <CustomTitle title="about us" />
                 <p className="tas__description text-align">
                   <strong>Technical Associates Services P. Ltd. </strong>was
                   formed in the year <strong>2002&nbsp;</strong>with an aim to

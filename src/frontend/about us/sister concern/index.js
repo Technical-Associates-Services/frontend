@@ -21,18 +21,25 @@ const SisterConcern = () => {
                 <div className="block__left">
                   <img
                     className="block__logo"
-                    src="/images/HT-logo-png-fn2-300x89.png"
+                    src="/images/future.png"
                     alt=""
+                    width={'250'}
+                    height={'auto'}
                   />
                 </div>
               </Col>
               <Col lg={7}>
                 <div className="block__right">
-                  <CustomTitle title="Healthcare Technologies Pvt. LTD." />
+                  <CustomTitle title="Future Techniques Pvt. Ltd.." />
                   <p className="block__description">
-                    Healthcare Technologies deals with Medical Equipment,
-                    Medical Instruments, Medical Consumables, Oxygen Therapy
-                    Equipment and Personal Healthcare Equipment.
+                    Future Techniques is dedicated to providing top-notch
+                    turnkey systems and stainless steel components, drawing on
+                    our wealth of experience from over a thousand installations
+                    globally. Our customized units are designed to meet your
+                    specific requirements, offering a comprehensive suite of
+                    services, including expert advice, meticulous planning,
+                    precise engineering, thorough supervision, and specialized
+                    training.
                   </p>
 
                   <h5
@@ -50,15 +57,7 @@ const SisterConcern = () => {
                   <Collapse in={open}>
                     <div id="example-collapse-text">
                       <ul>
-                        <li>
-                          Microlife (Personal Healthcare Equipments and
-                          Instruments)
-                        </li>
-                        <li>Philips Respironics (Respiratory Technology)</li>
-                        <li>
-                          3M (Infection Control, Critical Care &amp; Infection
-                          Control)
-                        </li>
+                        <li>Paramount Beds (Hospital Furnitures)</li>
                       </ul>
                     </div>
                   </Collapse>
@@ -170,16 +169,11 @@ const SisterConcern = () => {
             <Row>
               <Col lg={7}>
                 <div className="block__left">
-                  <CustomTitle title="Future Techniques  Pvt. Ltd.." />
+                  <CustomTitle title="Healthcare Technologies Pvt. LTD." />
                   <p className="block__description">
-                    Future Techniques is dedicated to providing top-notch
-                    turnkey systems and stainless steel components, drawing on
-                    our wealth of experience from over a thousand installations
-                    globally. Our customized units are designed to meet your
-                    specific requirements, offering a comprehensive suite of
-                    services, including expert advice, meticulous planning,
-                    precise engineering, thorough supervision, and specialized
-                    training.
+                    Healthcare Technologies deals with Medical Equipment,
+                    Medical Instruments, Medical Consumables, Oxygen Therapy
+                    Equipment and Personal Healthcare Equipment.
                   </p>
                   <h5
                     className="block__subtitle d-flex gap-5 mt-4 align-items-center"
@@ -195,7 +189,15 @@ const SisterConcern = () => {
                   <Collapse in={open3}>
                     <div id="example-collapse-text1">
                       <ul>
-                        <li>Paramount Beds (Hospital Furnitures)</li>
+                        <li>
+                          Microlife (Personal Healthcare Equipments and
+                          Instruments)
+                        </li>
+                        <li>Philips Respironics (Respiratory Technology)</li>
+                        <li>
+                          3M (Infection Control, Critical Care &amp; Infection
+                          Control)
+                        </li>
                       </ul>
                     </div>
                   </Collapse>
@@ -205,10 +207,8 @@ const SisterConcern = () => {
                 <div className="block__right w-100 h-100">
                   <img
                     className="block__logo"
-                    src="/images/future.png"
+                    src="/images/HT-logo-png-fn2-300x89.png"
                     alt=""
-                    width={'250'}
-                    height={'auto'}
                   />
                 </div>
               </Col>

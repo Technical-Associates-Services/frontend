@@ -16,32 +16,9 @@
         border: 1px solid #e7e7e7
         padding: 1.5rem
         position: relative
-        &:hover
-            &::before
-                transition-delay: 0s
-                width: 100%
-            &::after
-                transition-delay: 0s
-                width: 100%
-            .items__content
-                &::before
-                    transition-delay: 0.2s
-                    height: 100%
-                &::after
-                    transition-delay: 0.2s
-                    height: 100%    
+        
                           
-        &::before
-            right: 0
-            top: 0
-            content: ""
-            width: 0
-            height: 2px
-            position: absolute
-            transition: all 0.2s linear
-            background: #dd3333
-            transition-delay: 0.2s
-        &::after
+       
             left: 0
             bottom: 0
             content: ""
@@ -49,29 +26,9 @@
             height: 2px
             position: absolute
             transition: all 0.2s linear
-            background: #dd3333
+            background: $primary-color
             transition-delay: 0.2s
         .items__content
-            &::before
-                left: 0
-                top: 0
-                content: ""
-                width: 2px
-                height: 0
-                position: absolute
-                transition: all 0.2s linear
-                background: #dd3333
-                transition-delay: 0s
-            &::after
-                right: 0
-                bottom: 0
-                transition-delay: 0s
-                content: ""
-                width: 2px
-                height: 0
-                position: absolute
-                transition: all 0.2s linear
-                background: #dd3333
             .items__description
                 color:#666
                 font-size: 14px

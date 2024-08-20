@@ -13,12 +13,11 @@ export const FooterParent = styled.div`
     min-width: 18px !important;
   }
 `
-export const FooterLogo = styled.div`
+export const FooterText = styled.div`
   padding-left: 15px;
   border-left: 2px solid #dd3333;
   p {
-    font-size: 18px !important;
-    font-weight: 500;
-    letter-spacing: 0px;
+    font-size: 14px !important;
+    line-height: 1.75;
   }
 `

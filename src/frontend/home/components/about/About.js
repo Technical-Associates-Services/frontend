@@ -19,22 +19,22 @@ const About = () => {
             </Col>
             <Col lg={6}>
               <div className="about__content">
-                <CustomTitle title="about  TAS" />
+                <CustomTitle title="about  us" />
                 <p className="about__text">
-                  Technical Associates Services (TAS) aim to provide cost
-                  effective engineering solutions to people and industries in
-                  Nepal.
+                  <strong>Technical Associates Services</strong> aim to provide
+                  cost effective engineering solutions to people and industries
+                  in Nepal.
                 </p>
                 <p className="about__text">
-                  Technical Associates Services (TAS) aim to provide cost
-                  effective engineering solutions to people and industries in
-                  Nepal. We provide complete solutions for Water Treatment
-                  Systems, Waste Treatment Systems, Water Treatment accessories,
-                  Pharma water distributions system, Pumping Solutions (Grundfos
-                  Pumps), Compressed Air Systems, Medical Gas Pipeline Systems,
-                  Sprinklers & Irrigation System, Professional Laundry
-                  solutions, PSA type Oxygen & Nitrogen Generators, Modular
-                  Operation Theatres, Fire Fighting Systems and Flowmeters.
+                  We aim to provide cost effective engineering solutions to
+                  people and industries in Nepal. We provide complete solutions
+                  for Water Treatment Systems, Waste Treatment Systems, Water
+                  Treatment accessories, Pharma water distributions system,
+                  Pumping Solutions (Grundfos Pumps), Compressed Air Systems,
+                  Medical Gas Pipeline Systems, Sprinklers & Irrigation System,
+                  Professional Laundry solutions, PSA type Oxygen & Nitrogen
+                  Generators, Modular Operation Theatres, Fire Fighting Systems
+                  and Flowmeters.
                 </p>
                 <Link to="/about-us">
                   <CustomButton btnData="Learn More" />

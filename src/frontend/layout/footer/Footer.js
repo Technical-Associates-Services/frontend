@@ -8,7 +8,7 @@ import FooterProduct from '../../../components/frontend/layout/footer/FooterProd
 import { footerData } from '../../../data/data'
 import CustomButton from '../../../components/common/button/CustomButton'
 import SendIcon from '../../../icons/SendIcon'
-import { FooterLogo, FooterLogoContainer, FooterParent } from './styles'
+import { FooterLogoContainer, FooterParent, FooterText } from './styles'
 const Footer = () => {
   return (
     <>
@@ -34,14 +34,13 @@ const Footer = () => {
                       />
                     </FooterParent>
                   </FooterLogoContainer>
-                  <FooterLogo>
-                    <p className="mb-4 text">TAS : A part of Kusum Group</p>
-                  </FooterLogo>
-                  <p className="mb-0">
-                    Technical Associates Services (TAS) aim to provide cost
-                    effective engineering solutions to people and industries in
-                    Nepal.
-                  </p>
+                  <FooterText>
+                    <p>
+                      We aim to provide cost effective engineering solutions to
+                      people and industries in Nepal.
+                    </p>
+                  </FooterText>
+
                   <form>
                     <input
                       type="text"
@@ -88,8 +87,8 @@ const Footer = () => {
                         <li className="info address">
                           <i className="ri-map-pin-2-line"></i>
                           <p>
-                            Aspen Marg, Maitighar,
-                            <br /> St. Xavier College Rd, Kathmandu, Nepal –
+                            Technical Associates Services, Aspen Marg,
+                            Maitighar, St. Xavier College Rd, Kathmandu, Nepal –
                             44600
                           </p>
                         </li>

@@ -22,7 +22,7 @@ const Projects = () => {
                       customStyle={{ width: '300px' }}
                     />
                     <p>
-                      Technical Associates Services (TAS) aim to provide cost
+                      Technical Associates Services aim to provide cost
                       effective engineering solutions to people and industries
                       in Nepal.
                     </p>

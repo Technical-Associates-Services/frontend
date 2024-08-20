@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 const CustomCard = ({ data }) => {
   return (
     <>
-      <div className="card">
-        <img className="card__image" src={data.image} alt={data.title} />
-        <div className="card__info">
+      <div className="custom-card">
+        <img className="custom-card__image" src={data.image} alt={data.title} />
+        <div className="custom-card__info">
           <Link to="/product/water-space-heating-systems">
-            <div className="card__title">{data.title}</div>
+            <div className="custom-card__title">{data.title}</div>
           </Link>
-          <div className="card__summary">{data.summary}</div>
-          <div className="card__button">
+          <div className="custom-card__summary">{data.summary}</div>
+          <div className="custom-card__button">
             <Link to="/product/water-space-heating-systems">
               More Details
               <i className="ri-arrow-right-line"></i>

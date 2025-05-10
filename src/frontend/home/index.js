@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useContext } from "react";
 import {
-  LatestProjects,
-  Blog,
-  Banner,
-  About,
-  Overview,
-  TestimonialsCard,
-} from './components'
-import References from './components/references'
+      LatestProjects,
+      Blog,
+      Banner,
+      About,
+      Overview,
+      TestimonialsCard,
+} from "./components";
+import References from "./components/references";
+import { MetaContext } from "../../store";
 
 const Home = () => {
-  return (
-    <>
-      <Banner />
-      <About />
-      <LatestProjects />
-      <References />
-      <Overview />
-      <TestimonialsCard />
-      <Blog />
-    </>
-  )
-}
+      const metaCtx = useContext(MetaContext);
+      metaCtx.handleSlug("home-page");
 
-export default Home
+      return (
+            <>
+                  <Banner />
+                  <About />
+                  <LatestProjects />
+                  {/* <References /> */}
+                  <Overview />
+                  {/* <TestimonialsCard /> */}
+                  <Blog />
+            </>
+      );
+};
+
+export default Home;

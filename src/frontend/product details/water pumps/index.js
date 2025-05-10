@@ -1,38 +1,94 @@
-import React from 'react'
-import CustomBreadcrumb from '../../../components/common/CustomBreadcrumb'
-import ProductDetailCard from '../components/ProductDetailCard'
-import { waterPumpsData } from '../../../data/data'
-import { commercialWterPump } from '../../../data/data'
+import React, { useEffect, useState } from "react";
+import CustomBreadcrumb from "../../../components/common/CustomBreadcrumb";
+import ProductDetailCard from "../components/ProductDetailCard";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import HeatExchangerNepal from "./HeatExchangerNepal";
 
 const WaterPumps = () => {
-  return (
-    <>
-      <CustomBreadcrumb title="water pumps" subtitle="water pumps" />
-      <ProductDetailCard
-        description={waterPumpsData.description}
-        image={waterPumpsData.image}
-        link="#"
-        title="grundfos water pumps"
-      />
-     
-      <ProductDetailCard
-        title="Grundfos Industrial & Commercial Water Pumps In Nepal"
-        description="<ul><li>Pumps for Hot Water for Water Transfer, Hot Water Circulation, solar.</li> <li>Pumps for Air-Conditioning for Water Transfer, Chilled Water Circulation.</li></ul>"
-        image="/images/water pump.avif"
-        order={2}
-        backgroundColor="#f8f8f8"
-        padding="3rem 0"
-        marginBottom="2rem"
-      />
-      <ProductDetailCard
-        title="Domestic Water Pumps In Nepal"
-        description="<ul><li>Pumps for your Home for Water Transfer, Submersible Pumps, Water Treatment pumps, gardening pumps, wastewater pumps, rainwater pumps.</li>
-        <li>Pumps for Apartments, Hotels & Hospitals for Water Transfer, Submersible Pumps, Air-conditioning Pumps, Hot water circulation pumps, Pressure Boosting pumps, Water Treatment Pumps, gardening pumps, wastewater pumps, and rainwater pumps.</li>
-        </ul>"
-        image="/images/water-pump.png"
-      />
-    </>
-  )
-}
+      const { productId } = useParams();
+      const [loading, setLoading] = useState(false);
+      const [product, setProduct] = useState([]);
+      const [additional, setAdditional] = useState([]);
 
-export default WaterPumps
+      const loadData = async () => {
+            setLoading(true);
+            await axios
+                  .get(
+                        `${process.env.REACT_APP_SECRET_KEY}/api/products/${productId}/show`,
+                        {
+                              headers: {
+                                    apikey: process.env.REACT_APP_API_KEY,
+                              },
+                        }
+                  )
+                  .then((response) => {
+                        if (response.data.result === "success") {
+                              setProduct(response.data.product);
+                              setAdditional(response.data.product.additionals);
+                        }
+                  })
+                  .catch((error) => {
+                        console.log(error.message);
+                  });
+            setLoading(false);
+      };
+
+      useEffect(() => {
+            loadData();
+      }, [productId]);
+
+      return (
+            <>
+                  <Helmet>
+                        <title>{product?.seo_title || product?.title}</title>
+                  </Helmet>
+                  <CustomBreadcrumb
+                        title={product?.title}
+                        subtitle={product?.title}
+                  />
+                  <ProductDetailCard
+                        description={product?.description}
+                        image={product?.image}
+                        product={product}
+                        link={product?.download}
+                        title={product?.title}
+                  />
+
+                  {additional?.map((item, index) => (
+                        <>
+                              {(item?.title ||
+                                    item?.description ||
+                                    item?.image) && (
+                                    <ProductDetailCard
+                                          title={item?.title}
+                                          key={index}
+                                          description={item?.description}
+                                          image={item?.image}
+                                          classes={item?.image ? 6 : 12}
+                                          order={index % 2 === 0}
+                                          backgroundColor={`${
+                                                index % 2 === 0 ? "#f8f8f8" : ""
+                                          } `}
+                                          padding={`${
+                                                index % 2 === 0 ? "3rem 0" : ""
+                                          }`}
+                                          marginBottom={`${
+                                                index % 2 === 0 ? "2rem" : ""
+                                          }`}
+                                          endItem={
+                                                additional?.length - 1 === index
+                                          }
+                                    />
+                              )}
+                        </>
+                  ))}
+                  {productId === "heat-exchanger-nepal" && (
+                        <HeatExchangerNepal />
+                  )}
+            </>
+      );
+};
+
+export default WaterPumps;

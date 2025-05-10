@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterProduct = ({ data }) => {
-  return (
-    <>
-      <li className="item">
-        <Link to={data.slug}>{data.title}</Link>
-      </li>
-    </>
-  )
-}
+      return (
+            <>
+                  <li className="item">
+                        <Link to={`product/${data?.slug}`}>{data.title}</Link>
+                  </li>
+            </>
+      );
+};
 
-export default FooterProduct
+export default FooterProduct;

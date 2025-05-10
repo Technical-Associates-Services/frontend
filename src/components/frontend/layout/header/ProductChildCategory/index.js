@@ -1,19 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import DroprightIcon from '../../../../../icons/DroprightIcon'
+import React from "react";
+import { Link } from "react-router-dom";
+import DroprightIcon from "../../../../../icons/DroprightIcon";
 
-const ProductChildCategory = ({ item, children }) => {
-  return (
-    <>
-      <li className="child-category__item">
-        <Link to={item.slug}>
-          {item.childCategoryName}
-          {children && <DroprightIcon />}
-        </Link>
-        {children && children}
-      </li>
-    </>
-  )
-}
+const ProductChildCategory = ({ item, children, arrowStatus, onClick }) => {
+      return (
+            <>
+                  <li className="child-category__item">
+                        <Link
+                              target={item?.link ? "_blank" : ""}
+                              onClick={onClick}
+                              to={
+                                    item?.link
+                                          ? item.link
+                                          : `/product/${item.slug}`
+                              }
+                        >
+                              {item.title}
+                              {!arrowStatus && children && <DroprightIcon />}
+                        </Link>
+                        {children && children}
+                  </li>
+            </>
+      );
+};
 
-export default ProductChildCategory
+export default ProductChildCategory;

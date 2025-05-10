@@ -14,6 +14,7 @@
         .left__menu
             .left__item
                 margin-bottom: 1rem
+                list-style: none
              
                 a
                     background-color: #f5f2f2
@@ -23,7 +24,8 @@
                     display: block
                     text-transform: uppercase
                     transition: 0.3s ease
-                    &:hover
+                    &:hover,
+                    &.active
                         background-color: #dd3333
                         color: #fff
     .right
@@ -34,7 +36,12 @@
             display: flex
             justify-content: space-between
             margin: 2rem 0
+
+            @media screen and (max-width: 568px)
+                flex-direction: column
+
             .download
+                margin-top: 20px
                 a
                     padding: 10px 20px 
                     border: 2px solid #dd3333

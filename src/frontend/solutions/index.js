@@ -1,46 +1,87 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { solutionCard } from '../../data/data'
-import CustomBreadcrumb from '../../components/common/CustomBreadcrumb'
+import React, { useContext, useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
+import { MetaContext } from "../../store";
+import axios from "axios";
 const Solutions = () => {
-  return (
-    <>
-      <CustomBreadcrumb title="Solutions" subtitle="solutions" />
-      <Container>
-        <div className="solutions">
-          <Row>
-            {solutionCard.map((card, index) => (
-              <Col lg={4} key={index}>
-                <div className="solutions__card">
-                  <div className="image-overlay">
-                    <img
-                      className="solutions__image"
-                      src={card.image}
-                      alt="solutions"
-                    />
-                    <div className="overlay">
-                      <Link to={card.slug}>
-                        <i class="ri-links-fill"></i>
-                      </Link>
-                    </div>
-                  </div>
+      const metaCtx = useContext(MetaContext);
+      metaCtx.handleSlug("solutions");
 
-                  <div className="solutions__content">
-                    <h4 className="solutions__title">{card.title}</h4>
-                    <p className="solutions__samary">{card.description}</p>
-                    <Link to={card.slug}>
-                      <div className="read-btn">Read More</div>
-                    </Link>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </Container>
-    </>
-  )
-}
+      const [loading, setLoading] = useState(false);
+      const [solutions, setSolutions] = useState([]);
 
-export default Solutions
+      const loadData = async () => {
+            setLoading(true);
+            await axios
+                  .get(`${process.env.REACT_APP_SECRET_KEY}/api/solutions`)
+                  .then((response) => {
+                        if (response.data.result === "success") {
+                              setSolutions(response.data.solutions);
+                        }
+                  })
+                  .catch((error) => {
+                        console.log(error.message);
+                  });
+            setLoading(false);
+      };
+
+      useEffect(() => {
+            loadData();
+      }, []);
+
+      return (
+            <>
+                  <CustomBreadcrumb title="Solutions" subtitle="solutions" />
+                  <Container>
+                        <div className="solutions">
+                              <Row>
+                                    {solutions.map((card, index) => (
+                                          <Col lg={4} key={index}>
+                                                <div className="solutions__card">
+                                                      <div className="image-overlay">
+                                                            <img
+                                                                  className="solutions__image"
+                                                                  src={
+                                                                        card?.image
+                                                                  }
+                                                                  alt="solutions"
+                                                            />
+                                                            <div className="overlay">
+                                                                  <Link
+                                                                        to={`/solutions/${card?.slug}`}
+                                                                  >
+                                                                        <i class="ri-links-fill"></i>
+                                                                  </Link>
+                                                            </div>
+                                                      </div>
+
+                                                      <div className="solutions__content">
+                                                            <h4 className="solutions__title">
+                                                                  {card?.sub_title}
+                                                            </h4>
+                                                            <p className="solutions__samary">
+                                                                  {
+                                                                        card?.summary
+                                                                  }
+                                                            </p>
+                                                            <Link
+                                                                  to={`/solutions/${card?.slug}`}
+                                                            >
+                                                                  <div className="read-btn">
+                                                                        Read
+                                                                        More
+                                                                  </div>
+                                                            </Link>
+                                                      </div>
+                                                </div>
+                                          </Col>
+                                    ))}
+                              </Row>
+                        </div>
+                  </Container>
+            </>
+      );
+};
+
+export default Solutions;

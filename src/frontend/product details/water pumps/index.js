@@ -8,12 +8,10 @@ import HeatExchangerNepal from "./HeatExchangerNepal";
 
 const WaterPumps = () => {
       const { productId } = useParams();
-      const [loading, setLoading] = useState(false);
       const [product, setProduct] = useState([]);
       const [additional, setAdditional] = useState([]);
 
       const loadData = async () => {
-            setLoading(true);
             await axios
                   .get(
                         `${process.env.REACT_APP_SECRET_KEY}/api/products/${productId}/show`,
@@ -33,12 +31,12 @@ const WaterPumps = () => {
                   .catch((error) => {
                         console.log(error.message);
                   });
-            setLoading(false);
       };
 
       useEffect(() => {
             window.scrollTo(0, 0);
             loadData();
+            // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [productId]);
 
       return (

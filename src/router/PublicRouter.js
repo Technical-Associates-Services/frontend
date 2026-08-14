@@ -23,6 +23,11 @@ const PublicRouter = () => {
                   <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact-us" element={<Contact />} />
+                        <Route path="/preview/product" element={
+                              <React.Suspense fallback={<div>Loading Preview...</div>}>
+                                    {React.createElement(React.lazy(() => import('../app/ProductPreview')))}
+                              </React.Suspense>
+                        } />
 
                         <Route path="/blogs" element={<BlogAndNews />} />
                         <Route

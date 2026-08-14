@@ -27,6 +27,7 @@ const WaterPumps = () => {
                         if (response.data.result === "success") {
                               setProduct(response.data.product);
                               setAdditional(response.data.product.additionals);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                   })
                   .catch((error) => {
@@ -36,6 +37,7 @@ const WaterPumps = () => {
       };
 
       useEffect(() => {
+            window.scrollTo(0, 0);
             loadData();
       }, [productId]);
 

@@ -1,12 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import axios from "axios";
 
 import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
-import { serviceCard } from "../../data/data";
+import { serviceCard as defaultServices } from "../../data/data";
 import { MetaContext } from "../../store";
+
 const Services = () => {
       const metaCtx = useContext(MetaContext);
       metaCtx.handleSlug("services");
+
+      const [services, setServices] = useState(defaultServices);
+
+      useEffect(() => {
+            const fetchServices = async () => {
+                  try {
+                        const response = await axios.get(
+                              `${process.env.REACT_APP_SECRET_KEY}/api/services`
+                        );
+                        if (
+                              response.data?.result === "success" &&
+                              Array.isArray(response.data?.services) &&
+                              response.data.services.length > 0
+                        ) {
+                              setServices(response.data.services);
+                        }
+                  } catch (error) {
+                        console.error("Error fetching services:", error);
+                  }
+            };
+            fetchServices();
+      }, []);
 
       return (
             <>
@@ -14,7 +38,7 @@ const Services = () => {
                   <div className="services">
                         <Container>
                               <Row>
-                                    {serviceCard.map((card, index) => (
+                                    {services.map((card, index) => (
                                           <Col lg={6} key={index}>
                                                 <div className="services__card">
                                                       <Row>
@@ -24,7 +48,7 @@ const Services = () => {
                                                                         src={
                                                                               card.image
                                                                         }
-                                                                        alt=""
+                                                                        alt={card.title || "service"}
                                                                   />
                                                             </Col>
                                                             <Col lg={6}>
@@ -34,11 +58,10 @@ const Services = () => {
                                                                                     card.title
                                                                               }
                                                                         </h4>
-                                                                        <p className="services__details">
-                                                                              {
-                                                                                    card.description
-                                                                              }
-                                                                        </p>
+                                                                        <div 
+                                                                              className="services__details"
+                                                                              dangerouslySetInnerHTML={{ __html: card.description || "" }}
+                                                                        />
                                                                   </div>
                                                             </Col>
                                                       </Row>

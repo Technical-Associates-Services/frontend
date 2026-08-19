@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { banners } from "../../../../data/data";
+import { banners as defaultBanners } from "../../../../data/data";
+import axios from "axios";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,6 +13,28 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 
 const Banner = () => {
+      const [bannerList, setBannerList] = useState(defaultBanners);
+
+      useEffect(() => {
+            const fetchBanners = async () => {
+                  try {
+                        const response = await axios.get(
+                              `${process.env.REACT_APP_SECRET_KEY}/api/banners`
+                        );
+                        if (
+                              response.data?.result === "success" &&
+                              Array.isArray(response.data?.banners) &&
+                              response.data.banners.length > 0
+                        ) {
+                              setBannerList(response.data.banners);
+                        }
+                  } catch (error) {
+                        console.error("Error fetching banners:", error);
+                  }
+            };
+            fetchBanners();
+      }, []);
+
       return (
             <>
                   <div className="banner">
@@ -27,7 +50,7 @@ const Banner = () => {
                               modules={[Autoplay, EffectFade, Navigation]}
                               className="mySwiper"
                         >
-                              {banners.map((banner, index) => (
+                              {bannerList.map((banner, index) => (
                                     <SwiperSlide key={index}>
                                           <div
                                                 className="banner__image"
@@ -37,19 +60,20 @@ const Banner = () => {
                                           >
                                                 <div className="banner__title--holder">
                                                       <div className="title__holder--content">
-                                                            <p className="category">
-                                                                  {
-                                                                        banner.category
-                                                                  }
-                                                            </p>
+                                                            {banner.category && (
+                                                                  <p className="category">
+                                                                        {banner.category}
+                                                                  </p>
+                                                            )}
                                                             <h3 className="banner__title">
                                                                   {banner.title}
                                                             </h3>
-                                                            <div className="banner__description">
-                                                                  {
-                                                                        banner.description
-                                                                  }
-                                                            </div>
+                                                            {banner.description && (
+                                                                  <div 
+                                                                        className="banner__description"
+                                                                        dangerouslySetInnerHTML={{ __html: banner.description }}
+                                                                  />
+                                                            )}
                                                       </div>
                                                 </div>
                                           </div>

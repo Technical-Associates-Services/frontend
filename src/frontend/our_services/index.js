@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../utils/sanitize";
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
@@ -60,7 +61,7 @@ const Services = () => {
                                                                         </h4>
                                                                         <div 
                                                                               className="services__details"
-                                                                              dangerouslySetInnerHTML={{ __html: card.description || "" }}
+                                                                              dangerouslySetInnerHTML={{ __html: sanitizeHtml(card.description || "") }}
                                                                         />
                                                                   </div>
                                                             </Col>

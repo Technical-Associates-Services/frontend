@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../../utils/sanitize";
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CustomTitle from "../../../components/common/CustomTitle";
@@ -80,9 +81,7 @@ const SisterConcern = () => {
                                                                   }
                                                             />
                                                             <BlockDescription
-                                                                  dangerouslySetInnerHTML={{
-                                                                        __html: item?.description,
-                                                                  }}
+                                                                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(item?.description,) }}
                                                             />
                                                       </div>
                                                 </Col>

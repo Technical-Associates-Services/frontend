@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../utils/sanitize";
 import React, { useState, useEffect } from 'react';
 
 const ProductPreview = () => {
@@ -71,7 +72,7 @@ const ProductPreview = () => {
             {/* If description is HTML (like from a rich text editor), we can use dangerouslySetInnerHTML */}
             <div 
               style={{ color: '#555', lineHeight: '1.8' }}
-              dangerouslySetInnerHTML={{ __html: data.description || '<p>No description provided.</p>' }} 
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(data.description || '<p>No description provided.</p>') }} 
             />
           </div>
 

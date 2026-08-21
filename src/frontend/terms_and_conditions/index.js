@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../utils/sanitize";
 import React, { useContext, useEffect, useState } from "react";
 import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
 import { Container, Spinner } from "react-bootstrap";
@@ -48,9 +49,7 @@ const TermsAndCondition = () => {
                         <PolicyContent>
                               {!loading ? (
                                     <div
-                                          dangerouslySetInnerHTML={{
-                                                __html: policy?.description,
-                                          }}
+                                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(policy?.description,) }}
                                     ></div>
                               ) : (
                                     <div className="text-center py-5">

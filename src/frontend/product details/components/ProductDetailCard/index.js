@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../../../utils/sanitize";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CustomTitle from "../../../../components/common/CustomTitle";
@@ -44,9 +45,7 @@ const ProductDetailCard = ({
                                                             )}
                                                             <div
                                                                   className="product__description"
-                                                                  dangerouslySetInnerHTML={{
-                                                                        __html: description,
-                                                                  }}
+                                                                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(description,) }}
                                                             ></div>
                                                             {link && (
                                                                   <div className="download">
@@ -90,9 +89,7 @@ const ProductDetailCard = ({
                                                             )}
                                                             <div
                                                                   className="product__description"
-                                                                  dangerouslySetInnerHTML={{
-                                                                        __html: description,
-                                                                  }}
+                                                                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(description,) }}
                                                             ></div>
                                                             {link && (
                                                                   <div className="download">

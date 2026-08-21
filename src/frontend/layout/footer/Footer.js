@@ -178,16 +178,7 @@ const Footer = () => {
                                     <div className="bottom-list">
                                           <div className="footer__copyright">
                                                 Copyright &copy; {currentYear}{" "}
-                                                TAS
-                                          </div>
-                                          <div className="footer__credit">
-                                                Powered By:
-                                                <Link
-                                                      to="https://infinityinfosys.com/"
-                                                      target="_blank"
-                                                >
-                                                      Infinity Infosys
-                                                </Link>
+                                                TAS. All Rights Reserved.
                                           </div>
                                     </div>
                               </Container>

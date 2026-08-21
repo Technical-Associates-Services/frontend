@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../../../utils/sanitize";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { banners as defaultBanners } from "../../../../data/data";
@@ -71,7 +72,7 @@ const Banner = () => {
                                                             {banner.description && (
                                                                   <div 
                                                                         className="banner__description"
-                                                                        dangerouslySetInnerHTML={{ __html: banner.description }}
+                                                                        dangerouslySetInnerHTML={{ __html: sanitizeHtml(banner.description) }}
                                                                   />
                                                             )}
                                                       </div>

@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../utils/sanitize";
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
@@ -85,7 +86,7 @@ const ReferencesPage = () => {
                             {item.description && (
                               <div
                                 style={{ fontSize: "14px", color: "#666", lineHeight: "1.6" }}
-                                dangerouslySetInnerHTML={{ __html: item.description }}
+                                dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.description) }}
                               />
                             )}
                           </div>

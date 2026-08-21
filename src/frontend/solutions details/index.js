@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "../../utils/sanitize";
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
@@ -126,9 +127,7 @@ const SolutionsDetails = () => {
                                                                               </Accordion.Header>
                                                                               <Accordion.Body>
                                                                                     <div
-                                                                                          dangerouslySetInnerHTML={{
-                                                                                                __html: item?.description,
-                                                                                          }}
+                                                                                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(item?.description,) }}
                                                                                     ></div>
                                                                               </Accordion.Body>
                                                                         </Accordion.Item>
@@ -136,9 +135,7 @@ const SolutionsDetails = () => {
                                                             )}
                                                       </Accordion>
                                                       <p
-                                                            dangerouslySetInnerHTML={{
-                                                                  __html: solution?.description,
-                                                            }}
+                                                            dangerouslySetInnerHTML={{ __html: sanitizeHtml(solution?.description,) }}
                                                       ></p>
                                                 </div>
                                           </div>

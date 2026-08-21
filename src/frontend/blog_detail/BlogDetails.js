@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
+import { sanitizeHtml } from "../../utils/sanitize";
 import axios from "axios";
 
 const BlogDetails = () => {
@@ -56,9 +57,8 @@ const BlogDetails = () => {
                                           <div
                                                 className="leftside__description--holder"
                                                 dangerouslySetInnerHTML={{
-                                                      __html: blog?.description,
-                                                }}
-                                          ></div>
+                                                      __html: sanitizeHtml(blog?.description),
+                                                }}></div>
                                     </div>
                               </Col>
                               <Col lg={4}>

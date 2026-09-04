@@ -24,10 +24,14 @@ const Banner = () => {
                         );
                         if (
                               response.data?.result === "success" &&
-                              Array.isArray(response.data?.banners) &&
-                              response.data.banners.length > 0
+                              Array.isArray(response.data?.banners)
                         ) {
-                              setBannerList(response.data.banners);
+                              const validBanners = response.data.banners.filter(
+                                    b => b.title && b.title.toLowerCase() !== "something" && b.image
+                              );
+                              if (validBanners.length > 0) {
+                                    setBannerList(validBanners);
+                              }
                         }
                   } catch (error) {
                         console.error("Error fetching banners:", error);

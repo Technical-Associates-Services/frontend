@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
 
 const MetaContext = createContext({
       handleSlug: (slug, e) => {},
@@ -15,6 +14,9 @@ export const MetaContextProvider = (props) => {
       const [meta, setMeta] = useState([]);
       const [slug, setSlug] = useState("");
       const [plugins, setPlugins] = useState([]);
+
+      const currentPath = typeof window !== "undefined" ? window.location.pathname : "/";
+      const canonicalUrl = `https://tas.com.np${currentPath === '/' ? '' : currentPath.replace(/\/+$/, '')}`;
 
       const handleSlug = (slug) => {
             setSlug(slug);
@@ -61,7 +63,7 @@ export const MetaContextProvider = (props) => {
 
       useEffect(() => {
             loadData();
-      }, [useLocation.location, slug]);
+      }, [currentPath, slug]);
 
       const context = {
             handleSlug: handleSlug,
@@ -73,7 +75,7 @@ export const MetaContextProvider = (props) => {
                   <>
                         {meta.slug === slug ? (
                               <Helmet>
-                                    <title>{meta.seo_title}</title>
+                                    <title>{meta.seo_title || meta.title}</title>
                                     {meta.seo_description && (
                                           <meta
                                                 name="description"
@@ -82,13 +84,13 @@ export const MetaContextProvider = (props) => {
                                     )}
                                     {meta.seo_keyword && (
                                           <meta
-                                                name="keyword"
+                                                name="keywords"
                                                 content={meta.seo_keyword}
                                           />
                                     )}
                                     <link
                                           rel="canonical"
-                                          href={window.location.href}
+                                          href={canonicalUrl}
                                     />
                               </Helmet>
                         ) : null}

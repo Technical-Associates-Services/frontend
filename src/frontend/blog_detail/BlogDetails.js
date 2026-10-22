@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
 import { sanitizeHtml } from "../../utils/sanitize";
 import axios from "axios";
+import SEOEngine from "../../seo/SEOEngine";
 
 const BlogDetails = () => {
       const [loading, setLoading] = useState(false);
@@ -38,6 +39,21 @@ const BlogDetails = () => {
 
       return (
             <>
+                  <SEOEngine
+                        title={blog?.title}
+                        seoTitle={blog?.seo_title}
+                        description={blog?.summary || blog?.description}
+                        seoDescription={blog?.seo_description}
+                        keywords={blog?.seo_keyword}
+                        image={blog?.image}
+                        type="article"
+                        breadcrumbs={[
+                              { name: "Home", url: "/" },
+                              { name: "Blogs", url: "/blogs" },
+                              { name: blog?.title || "Blog Post", url: `/blogs/${blogId}` }
+                        ]}
+                        articleData={blog}
+                  />
                   <CustomBreadcrumb
                         title={blog?.title}
                         subtitle="Blog"

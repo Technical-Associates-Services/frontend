@@ -4,6 +4,7 @@ import ProductDetailCard from "../components/ProductDetailCard";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import SEOEngine from "../../../seo/SEOEngine";
 import HeatExchangerNepal from "./HeatExchangerNepal";
 
 const WaterPumps = () => {
@@ -41,9 +42,21 @@ const WaterPumps = () => {
 
       return (
             <>
-                  <Helmet>
-                        <title>{product?.seo_title || product?.title}</title>
-                  </Helmet>
+                  <SEOEngine
+                        title={product?.title}
+                        seoTitle={product?.seo_title}
+                        description={product?.summary || product?.description}
+                        seoDescription={product?.seo_description}
+                        keywords={product?.seo_keyword}
+                        image={product?.image}
+                        type={product?.is_category ? "category" : "product"}
+                        breadcrumbs={[
+                              { name: "Home", url: "/" },
+                              { name: product?.category || (product?.is_category ? "Categories" : "Products"), url: product?.category ? `/product/${product?.category_slug || productId}` : "/products" },
+                              { name: product?.title || "Item", url: `/product/${productId}` }
+                        ]}
+                        productData={!product?.is_category ? product : null}
+                  />
                   <CustomBreadcrumb
                         title={product?.title}
                         subtitle={product?.title}

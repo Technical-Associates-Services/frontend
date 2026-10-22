@@ -8,11 +8,6 @@
                   content="width=device-width, initial-scale=1"
             />
             <meta name="theme-color" content="#000000" />
-            <meta
-                  name="description"
-                  content="Web site created using create-react-app"
-            />
-            <link rel="canonical" href="https://tas.com.np/" />
             <link rel="icon" href="%PUBLIC_URL%/favicon.png?v=2" type="image/png" sizes="192x192" />
             <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png?v=2" type="image/png" />
             <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png?v=2" />
@@ -56,6 +51,71 @@
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:label1" content="Est. reading time" />
             <meta name="twitter:data1" content="12 minutes" />
+
+            <!-- Schema.org Structured Data: LocalBusiness & WebSite for Local SEO / Near-Me Searches -->
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://tas.com.np/#localbusiness",
+                  "name": "Technical Associates Services P. Ltd.",
+                  "alternateName": ["TAS Nepal", "Technical Associates Services"],
+                  "url": "https://tas.com.np",
+                  "logo": "https://tas.com.np/favicon.png",
+                  "image": "https://tas.com.np/wp-content/uploads/2022/11/quicksquarenew_202012413746800.jpg",
+                  "description": "Technical Associates Services (TAS) provides complete engineering solutions for water and waste treatment, hot water heat pumps, compressed air, medical gas pipeline, irrigation, PSA oxygen/nitrogen generators, and firefighting in Nepal.",
+                  "telephone": "+977-1-5339555",
+                  "email": "info@tas.com.np",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Aspen Marg, Maitighar, St. Xavier College Rd",
+                    "addressLocality": "Kathmandu",
+                    "addressRegion": "Bagmati Province",
+                    "postalCode": "44600",
+                    "addressCountry": "NP"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 27.693619,
+                    "longitude": 85.314859
+                  },
+                  "hasMap": "https://maps.google.com/?cid=11512754674069308018",
+                  "openingHoursSpecification": [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                      "opens": "09:30",
+                      "closes": "18:00"
+                    }
+                  ],
+                  "areaServed": [
+                    { "@type": "City", "name": "Kathmandu" },
+                    { "@type": "City", "name": "Lalitpur" },
+                    { "@type": "City", "name": "Bhaktapur" },
+                    { "@type": "City", "name": "Pokhara" },
+                    { "@type": "City", "name": "Biratnagar" },
+                    { "@type": "City", "name": "Birgunj" },
+                    { "@type": "Country", "name": "Nepal" }
+                  ],
+                  "priceRange": "$$",
+                  "sameAs": [
+                    "https://www.facebook.com/tasnpl/"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://tas.com.np/#website",
+                  "url": "https://tas.com.np",
+                  "name": "TAS - Technical Associates Services",
+                  "publisher": {
+                    "@id": "https://tas.com.np/#localbusiness"
+                  }
+                }
+              ]
+            }
+            </script>
             <link
                   rel="stylesheet"
                   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"

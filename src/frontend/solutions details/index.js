@@ -6,6 +6,7 @@ import CustomBreadcrumb from "../../components/common/CustomBreadcrumb";
 import Accordion from "react-bootstrap/Accordion";
 import { solutionsData } from "../../data/data";
 import axios from "axios";
+import SEOEngine from "../../seo/SEOEngine";
 
 const SolutionsDetails = () => {
       const { solutionId } = useParams();
@@ -37,6 +38,21 @@ const SolutionsDetails = () => {
 
       return (
             <>
+                  <SEOEngine
+                        title={solution?.title}
+                        seoTitle={solution?.seo_title}
+                        description={solution?.summary || solution?.description}
+                        seoDescription={solution?.seo_description}
+                        keywords={solution?.seo_keyword}
+                        image={solution?.image}
+                        type="service"
+                        breadcrumbs={[
+                              { name: "Home", url: "/" },
+                              { name: "Solutions", url: "/solutions" },
+                              { name: solution?.title || "Solution", url: `/solutions/${solutionId}` }
+                        ]}
+                        serviceData={solution}
+                  />
                   <CustomBreadcrumb
                         title={solution?.title}
                         subtitle={solution?.sub_title}

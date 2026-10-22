@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+# Technical Associates Services (TAS) Robots.txt
+# https://tas.com.np
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /preview/
+Disallow: /preview/*
+
+Sitemap: https://tas.com.np/sitemap.xml

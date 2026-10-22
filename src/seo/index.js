@@ -1,5 +1,6 @@
 import React from "react";
 import { SeoContainer } from "./styles";
+import SEOEngine from "./SEOEngine";
 
 const SEO = () => {
       return (
@@ -11,4 +12,5 @@ const SEO = () => {
       );
 };
 
+export { SEOEngine };
 export default SEO;

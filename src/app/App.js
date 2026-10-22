@@ -14,9 +14,9 @@ import { Toaster } from "react-hot-toast";
 const App = () => {
       return (
             <>
-                  <MetaContextProvider>
-                        <Toaster position="top-right" />
-                        <Router>
+                  <Router>
+                        <MetaContextProvider>
+                              <Toaster position="top-right" />
                               <SEO />
                               <ScrollToTop />
                               <ScrollButton />
@@ -24,8 +24,8 @@ const App = () => {
                               <Header />
                               <PublicRouter />
                               <Footer />
-                        </Router>
-                  </MetaContextProvider>
+                        </MetaContextProvider>
+                  </Router>
             </>
       );
 };

@@ -55,107 +55,163 @@ const SEOEngine = ({
 
   // 1. Breadcrumbs Schema
   if (breadcrumbs && breadcrumbs.length > 0) {
-    jsonLdGraph.push({
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbs.map((crumb, idx) => ({
-        "@type": "ListItem",
-        "position": idx + 1,
-        "name": crumb.name,
-        "item": crumb.url.startsWith("http") ? crumb.url : `${DOMAIN}${crumb.url.startsWith("/") ? "" : "/"}${crumb.url}`
-      }))
-    });
+    const validCrumbs = breadcrumbs.filter(c => c && c.name && c.name !== "Item" && c.name.trim() !== "");
+    if (validCrumbs.length > 0) {
+      jsonLdGraph.push({
+        "@type": "BreadcrumbList",
+        "itemListElement": validCrumbs.map((crumb, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": crumb.name,
+          "item": crumb.url.startsWith("http") ? crumb.url : `${DOMAIN}${crumb.url.startsWith("/") ? "" : "/"}${crumb.url}`
+        }))
+      });
+    }
   }
 
-  // 2. Product Schema
-  if (type === "product" && productData) {
-    const rawPrice = productData.sale_price || productData.price;
+  // 2. Product Schema (Only generated when a valid product name exists)
+  const isActualProduct = type === "product" && productData && typeof productData === "object" && !Array.isArray(productData);
+  const productName = isActualProduct ? (productData.title || title || "").trim() : (title || "").trim();
+
+  if (type === "product" && productName && productName !== "Item") {
+    const rawPrice = productData?.sale_price || productData?.price;
     const cleanPrice = rawPrice ? String(rawPrice).replace(/[^0-9.]/g, "") : null;
+    const productDesc = cleanTextSnippet(
+      productData?.description || productData?.summary || description || `${productName} engineered and supplied by Technical Associates Services in Nepal.`,
+      300
+    );
 
     jsonLdGraph.push({
       "@type": "Product",
       "@id": `${canonicalUrl}#product`,
-      "name": productData.title || title,
-      "description": cleanTextSnippet(productData.description || description, 300),
+      "name": productName,
+      "description": productDesc,
       "image": finalImage,
-      "sku": productData.id ? `TAS-${productData.id}` : undefined,
+      "sku": productData?.id ? `TAS-${productData.id}` : undefined,
       "brand": {
         "@type": "Brand",
-        "name": productData.brand || productData.brand_name || "TAS"
+        "name": productData?.brand || productData?.brand_name || "TAS"
       },
       "offers": {
         "@type": "Offer",
         "url": canonicalUrl,
         "priceCurrency": "NPR",
         "price": cleanPrice && !isNaN(cleanPrice) ? cleanPrice : "0",
-        "availability": productData.stock > 0 || productData.stock === "In Stock" || !productData.stock
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": productData?.stock > 0 || productData?.stock === "In Stock" || !productData?.stock
           ? "https://schema.org/InStock"
           : "https://schema.org/OutOfStock",
         "seller": {
           "@type": "Organization",
           "name": "Technical Associates Services P. Ltd."
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "NP",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 15,
+          "returnMethod": "https://schema.org/ReturnInStore",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "NPR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "NP"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            }
+          }
         }
       }
     });
   }
 
-  // 3. CollectionPage Schema (for Categories)
-  if (type === "category") {
-    jsonLdGraph.push({
-      "@type": "CollectionPage",
-      "@id": `${canonicalUrl}#collection`,
-      "url": canonicalUrl,
-      "name": title,
-      "description": finalDescription,
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": `${DOMAIN}/#website`
-      }
-    });
+  // 3. CollectionPage Schema (for Categories - Only generated when title exists)
+  if (type === "category" && (title || productData?.title)) {
+    const categoryName = (title || productData?.title || "").trim();
+    if (categoryName) {
+      jsonLdGraph.push({
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#collection`,
+        "url": canonicalUrl,
+        "name": categoryName,
+        "description": finalDescription,
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": `${DOMAIN}/#website`
+        }
+      });
+    }
   }
 
   // 4. Blog / Article Schema
-  if (type === "article" && articleData) {
-    jsonLdGraph.push({
-      "@type": "BlogPosting",
-      "@id": `${canonicalUrl}#article`,
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": canonicalUrl
-      },
-      "headline": articleData.title || title,
-      "description": finalDescription,
-      "image": finalImage,
-      "author": {
-        "@type": "Organization",
-        "name": "Technical Associates Services"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Technical Associates Services",
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${DOMAIN}/favicon.png`
-        }
-      },
-      "datePublished": articleData.created_at ? new Date(articleData.created_at).toISOString() : new Date().toISOString(),
-      "dateModified": articleData.updated_at ? new Date(articleData.updated_at).toISOString() : new Date().toISOString()
-    });
+  if (type === "article" && articleData && (articleData.title || title)) {
+    const articleTitle = (articleData.title || title || "").trim();
+    if (articleTitle) {
+      jsonLdGraph.push({
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#article`,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
+        "headline": articleTitle,
+        "description": finalDescription,
+        "image": finalImage,
+        "author": {
+          "@type": "Organization",
+          "name": "Technical Associates Services"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Technical Associates Services",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${DOMAIN}/favicon.png`
+          }
+        },
+        "datePublished": articleData.created_at ? new Date(articleData.created_at).toISOString() : new Date().toISOString(),
+        "dateModified": articleData.updated_at ? new Date(articleData.updated_at).toISOString() : new Date().toISOString()
+      });
+    }
   }
 
   // 5. Service Schema
-  if (type === "service" && serviceData) {
-    jsonLdGraph.push({
-      "@type": "Service",
-      "@id": `${canonicalUrl}#service`,
-      "name": serviceData.title || title,
-      "description": finalDescription,
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Technical Associates Services P. Ltd."
-      },
-      "areaServed": "Nepal",
-      "url": canonicalUrl
-    });
+  if (type === "service" && serviceData && (serviceData.title || title)) {
+    const serviceName = (serviceData.title || title || "").trim();
+    if (serviceName) {
+      jsonLdGraph.push({
+        "@type": "Service",
+        "@id": `${canonicalUrl}#service`,
+        "name": serviceName,
+        "description": finalDescription,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Technical Associates Services P. Ltd."
+        },
+        "areaServed": "Nepal",
+        "url": canonicalUrl
+      });
+    }
   }
 
   const structuredData = jsonLdGraph.length > 0 ? {

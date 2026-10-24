@@ -3,13 +3,12 @@ import CustomBreadcrumb from "../../../components/common/CustomBreadcrumb";
 import ProductDetailCard from "../components/ProductDetailCard";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import SEOEngine from "../../../seo/SEOEngine";
 import HeatExchangerNepal from "./HeatExchangerNepal";
 
 const WaterPumps = () => {
       const { productId } = useParams();
-      const [product, setProduct] = useState([]);
+      const [product, setProduct] = useState(null);
       const [additional, setAdditional] = useState([]);
 
       const loadData = async () => {
@@ -52,10 +51,14 @@ const WaterPumps = () => {
                         type={product?.is_category ? "category" : "product"}
                         breadcrumbs={[
                               { name: "Home", url: "/" },
-                              { name: product?.category || (product?.is_category ? "Categories" : "Products"), url: product?.category ? `/product/${product?.category_slug || productId}` : "/products" },
-                              { name: product?.title || "Item", url: `/product/${productId}` }
+                              ...(product?.category
+                                    ? [{ name: product.category, url: `/product/${product.category_slug || productId}` }]
+                                    : product?.is_category
+                                    ? [{ name: "Categories", url: "/products" }]
+                                    : [{ name: "Products", url: "/products" }]),
+                              ...(product?.title ? [{ name: product.title, url: `/product/${productId}` }] : [])
                         ]}
-                        productData={!product?.is_category ? product : null}
+                        productData={product && !product?.is_category ? product : null}
                   />
                   <CustomBreadcrumb
                         title={product?.title}

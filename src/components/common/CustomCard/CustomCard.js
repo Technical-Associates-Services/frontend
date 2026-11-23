@@ -9,6 +9,8 @@ const CustomCard = ({ data }) => {
                               className="custom-card__image"
                               src={data?.image}
                               alt={data?.title}
+                              loading="lazy"
+                              decoding="async"
                         />
                         <div className="custom-card__info">
                               <Link to={`/product/${data?.slug}`}>

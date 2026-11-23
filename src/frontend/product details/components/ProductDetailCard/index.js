@@ -148,6 +148,8 @@ const ProductDetailCard = ({
                                                                   className="product__image"
                                                                   src={image}
                                                                   alt={title}
+                                                                  loading="lazy"
+                                                                  decoding="async"
                                                             />
                                                       </ProductImage>
                                                 </Col>

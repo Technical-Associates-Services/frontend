@@ -14,7 +14,7 @@ const Projects = () => {
       const loadData = async () => {
             setLoading(true);
             await axios
-                  .get(`${process.env.REACT_APP_SECRET_KEY}/api/products`)
+                  .get(`${process.env.REACT_APP_SECRET_KEY}/api/products?limit=12`)
                   .then((response) => {
                         if (response.data.result === "success") {
                               setProducts(response.data.products);
